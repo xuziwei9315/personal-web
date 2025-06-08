@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>騙局雷達</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Vivienne</strong> location</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://www.instagram.com/vivienne_0115?igsh=cnpxMjdlMTdzbG9p" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>騙局雷達</h1>
+									</header>
+									<div class="image-row">
+										<span class="image main"><img src="../../images/pic01.jpg" alt="騙局雷達" onclick="openModal('../../images/專題海報.jpg')"/></span>
+										<figure>
+											<span class="image second"><img src="../../images/專題youtube.png" alt="專題youtube"onclick="openModal('../../images/專題youtube.png')" /></span>
+											<figcaption>專題youtube</figcaption>
+										</figure>
+									</div>
+									<!-- Modal HTML -->
+                                    <div id="imgModal" class="modal">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <img class="modal-content" id="modalImg">
+                                    </div>
+
+                                    <script>
+                                    function openModal(src) {
+                                        const modal = document.getElementById("imgModal");
+                                        const modalImg = document.getElementById("modalImg");
+                                        modal.style.display = "block";
+                                        modalImg.src = src;
+                                    }
+
+                                    function closeModal() {
+                                        document.getElementById("imgModal").style.display = "none";
+                                    }
+
+                                    // 點擊背景關閉 modal
+                                    window.onclick = function(event) {
+                                        const modal = document.getElementById("imgModal");
+                                        if (event.target === modal) {
+                                        modal.style.display = "none";
+                                        }
+                                    }
+                                    </script>
+
+									<br>
+									<p>系統將定期提供常見的反詐騙資訊、詐騙類型及實際案例，供使用者閱覽，加強媒體識讀及防範詐騙的意識。 </p>
+									<p>在與詐騙的相似度辨識上，設立了兩道防線，第一道為串接內政部警政署165接獲之LINE 
+										ID 及網址；第二道先是進行AI情感分析及自然語言處理分詞，再進行詐騙及非詐騙關鍵字
+										的相似度百分比辨識。由於現代民眾防詐意識較高，詐騙集團可能會避開常見的關鍵字行騙，
+										這時透過訓練之模型進行判斷，可大幅降低民眾受騙的機率。網站的部分則透過爬蟲的方式，
+										讀取網站中的資訊是否含有詐騙。若檢測結果有誤差，使用者也可利用回報功能進行回報。
+										當使用者確定該資訊是詐騙資訊，也可以向我們進行資料提供及回報。
+									</p>
+									<p>使用者進行防詐檢測的同時，系統會記錄檢測資料，並統計類型及關鍵字的檢測次數，讓使用者能得知目前哪種詐騙類型較為常見。</p>
+
+									<hr class="major" />
+
+									<h2>使用者介面</h2>
+									<ul>
+										<ol>1. 提供相關資訊：使用者可透過點選首頁的「常見手法」及底下的「時事詐騙新聞」，瀏覽常見的詐騙類型及相關關鍵字，加強使用者的防詐觀念、減少詐騙集團得逞機會。 </ol>
+										<ol>2. 關鍵字比對功能：透過大量搜集的詐騙類型之關鍵字資料集，以及政府公開資料，比對使用者上傳的文字，進一步辨別詐騙與否。 </ol>
+										<ol>3. 網站爬蟲功能：我們團隊的基礎比對是以關鍵字為主，若網站內容太多，反而會造成使用者操作不便。我們將利用爬蟲功能，直接讀取使用者貼上的網址內容，並結合政府開放資料平台已整理好的「假博弈網址」資料集直接過濾，減少操作時間，給予使用者較好的使用感受。</ol>
+										<ol>4. 圖片文字辨識功能：若詐騙集團利用「圖片夾雜文字」傳遞詐騙訊息，我們的系統也能辨識圖片中的內容進行判斷。</ol>
+										<ol>5. 檔案文字辨識功能：若詐騙集團以「檔案」方式傳遞詐騙訊息，我們的系統能從檔案中的內容進行辨識。 </ol>
+										<ol>6. AI情感分析及自然語言處理功能：由於詐騙手法越來越多元，且也有情境化的趨勢，為避免詐騙集團避開關鍵字向使用者行騙，將利用AI情感分析及自然語言處理分詞進行更進階的判斷。 </ol>
+										<ol>7. 準確度回報功能：詐騙手法的多元化一直在進步，可能會有系統尚未防範的漏洞，使用者可藉由回報功能向管理者回報誤差，以改善系統辨識準確度。</ol>
+										<ol>8. 資料提供及回報功能：為了擴大系統資料庫的關鍵字資料量，希望在提供使用者檢測的同時，從使用者的提供中提高檢測的準確度。</ol>
+										<ol>9. 統計資料功能：透過記錄使用者的檢測結果，統計類型及關鍵字的檢測次數，讓使用者能得知目前哪種詐騙類型較為常見，並加以防範。</ol>
+										<ol>10. 情境對話小遊戲：透過不同類型的沉浸式對話，讓使用者嘗試在其中找出最關鍵的詐騙引誘句，最後也會提供解答、解析及分數，希望有效提升使用者的反詐意識。</ol>
+									</ul>
+									<hr class="major" />
+
+									<h2>管理者介面</h2>
+									<ul>
+										<ol>1. 管理員可以透過一鍵上傳檔案的方式，方便更新資料集，加入新的資料樣本以提升模型的準確性，讓管理員能根據實際詐騙趨勢即時補充資料集內容。</ol>
+										<ol>2. 管理員可以查閱所有使用者的歷史檢測紀錄，了解使用者最新遇到的詐騙訊息，當看到新關鍵字可以再這裡更新資料集，進一步優化模型。</ol>
+										<ol>3. 使用者回報的可疑訊息將彙整至管理介面中，管理員可直接針對有疑問的樣本進行詐騙檢測，查看詐騙相似度，也可以對特定樣本進行人工編輯或是刪除。當有新關鍵字也可以在這裡將資料納入訓練資料集中。</ol>
+									</ul>
+									
+									<hr class="major" />
+
+									<h2>運用的技術</h2>
+									<h5>⚫ 機器學習</h5>
+									<p>機器學習是著重於訓練電腦從資料中學習，並根據經驗改進。在機器學習中會訓
+										練演算法尋找大型資料集的模式和關聯性，並根據該分析做出最佳決策和預測。機器
+										學習應用程式會隨著使用不斷改善，存取的資料越多、準確度越高。機器學習包含不
+										同類型的學習模式，並使用各種演算技術，根據資料的性質和期望結果，可以採用監
+										督式、非監督式、半監督式或強化式共四種學習模式。在各個模式中可以套用一或多
+										種演算法技術，取決於使用的資料集和預期結果。機器學習演算法主要用於分類事物、
+										辨識模式、預測結果，並做出周全的判斷。分析複雜且難以預測的資料時，您可以選
+										擇使用一種演算法，或是組合多種演算法以達到最佳的準確性。 
+										我們的系統採用半監督式學習，主要目的是希望機器可以辨別使用者輸入的資料
+										是否為詐騙，由於收集的內容是為詐騙的關鍵字，接收到未標記的關鍵字時，我們使
+										用少量已標記的資料，透過演算法將數據分類，並且接收新的資料後強化訓練模型。
+									</p>
+									<h5>⚫ 網路爬蟲</h5>
+									<p>資料的收集是相當重要的工作項目之一，但如果透過人工的方式來收集網站資料，效
+										率低之外也會花費掉非常多的時間。因此，資料的收集與整理這份工作，可以透過網
+										路爬蟲來協助，我們只要先制定好規則，網路爬蟲就可以自動依照這規則收集和擷取
+										資料並整理出我們所需的格式，像是Excel試算表、CSV 檔案或是資料庫等。 隨著網際網路的快速發展，各個網站內容已逐漸成為我們獲得資訊的主要管道之
+										一，為了更有效率的獲取資訊，網路爬蟲的重要性將越來越高，因此如果能正確的使
+										用網路爬蟲工具，效益是非常高的。
+									</p>
+									<h5>⚫ 圖片辨識</h5>
+									<p>在圖像辨識的部分，我們使用 PaddleOCR，是百度開發的文字識別模型，它採用 
+										PP-OCR 光學字符識別系統，包括文字檢測、檢測框校正和識別三個部分。 
+										具體的辨識流程是圖像首先經過文字檢測，將圖中可能包含文字的部分進行分割
+										處理，生成一個個檢測框。接著，系統對檢測框進行校正，將檢測框轉換為水平矩形
+										框，以便後續的文字識別。在這個階段，經過校正後的框體可能會被反轉，系統會使
+										用方向分類器來檢測並調整文字方向，確保其為正向。最後，系統進行文字識別，將
+										檢測框中的文字提取並顯示出來。 
+									</p>
+									<h5>⚫情感分析（情緒檢測）</h5>
+									<p>情感分析是一個計算上的過程，用於識別和分類在文本數據中表達的意見、情感
+										和態度。它利用自然語言處理（NLP）技術和機器學習算法來分析文本內容，將其分
+										類為積極、消極或中性。 
+										情緒檢測涉及分析一個人在寫下文字時的心理狀態。情緒檢測是情緒分析的一個
+										更複雜的學科，因為它比僅僅按類別進行分類更深入。在這種方法中，情緒分析模型
+										試圖透過個人對單詞的選擇來解釋各種情緒，例如喜悅、憤怒、悲傷和遺憾。本研究
+										主要使用情緒檢測，分析詐騙最常見的情緒類型，提高權重，以提升檢測詐騙的準確
+										度。
+									</p>
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									 <div class="clover-container">
+									<button class="clover-leaf" data-page="home.html" title="首頁">💚</button>
+									<button class="clover-leaf" data-page="about.html" title="關於我">💚</button>
+									<button class="clover-leaf" data-page="projects.html" title="作品集">💚</button>
+									<button class="clover-leaf" data-page="contact.html" title="聯絡我">💚</button>
+									</div>
+									<ul>
+										<li><a href="../../index.html">首頁</a></li>
+										<li>
+											<span class="opener">活動經歷</span>
+											<ul>
+												<li><a href="../Activity/Dep_society.html">系學會</a></li>
+												<li><a href="../Activity/AIESEC.html">AIESEC</a></li>
+												<li><a href="../Activity/Societies.html">社團活動</a></li>
+											</ul>
+										</li>
+										<li><a href="generic.html">Generic</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">作品集</span>
+											<ul>
+												<li><a href="../Portfolio/FD.html"><b>畢業專題-騙局雷達</b></a></li>
+												<li><a href="../Portfolio/Detective_Club.html"><b>推理AI派對-AI手遊</b></a></li>
+												<li><a href="../Portfolio/SA.html"><b>系統分析與設計-請假系統</b></a></li>
+											</ul>
+										</li>
+										
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>活動經歷</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="../../images/系學會封面.JPG" alt="" /></a>
+											<p>系學會</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../../images/AIESEC封面.jpg" alt="" /></a>
+											<p>AIESEC</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../../images/撞球社封面.jpg" alt="" /></a>
+											<p>社團活動-撞球社&烏克麗麗社</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>聯絡方式</h2>
+									</header>
+									<p>很很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。作為大學新鮮人，雖然經驗尚淺，但我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">vivienne.9931@gmail.com</a></li>
+										<li class="icon solid fa-phone">0965-323-391</li>
+										<li class="icon solid fa-home">(100)台北市中正區泰安街2-1號2樓</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy;由徐子崴，本人借助模板進行優化，以參與此次輔仁大學數位履歷活動。</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/new.js"></script>
+	</body>
+</html>

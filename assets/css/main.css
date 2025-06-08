@@ -1237,12 +1237,434 @@ input[type="radio"] + label:before {
     width: 100%; }
     .image.fit img {
       width: 100%; }
-  .image.main {
-    display: block;
-    margin: 0 0 3em 0;
-    width: 80%; }
+
+  /*我加入的css*/
     .image.main img {
-      width: 80%; }
+      width: 100%; }
+    .image.second img {
+      margin-top: 50px;
+      width: 100%; 
+    }
+ 
+  figure {
+  text-align: center;
+  margin: 0;
+}
+.image-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .image img {
+    width: 200px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+
+  .image img:hover {
+    transform: scale(1.05);
+  }
+  /* Modal Style */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+
+    .button.active {
+      background: #C4A9C9;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.5s;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .table-swot {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	th, td {
+      border: 1px solid #ddd;
+      padding: 16px;
+      vertical-align: top;
+      background-color: #fff;}
+	  
+
+    th {
+      background-color: #C4A9C9;
+      color: white;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    td ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    td:first-child {
+      font-weight: bold;
+      width: 20%;
+      background-color: #f0f0f0;
+    }
+    }
+ .carousel {
+      position: relative;
+      width: 80%;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      transition: transform 1s ease-in-out;
+      
+    }
+
+    .slide {
+      flex: 1 0 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      opacity: 0.4; 
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 80px;
+      left: 10px;
+      font-size: 2em;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid orange;
+    }
+
+
+     .timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* 主要垂直線 */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #b556a3;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+  }
+
+  .timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  /* 左側項目 */
+  .timeline-item.left {
+    left: 0;
+  }
+
+  /* 右側項目 */
+  .timeline-item.right {
+    left: 50%;
+  }
+
+  /* 連接點 */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #b556a3;
+    border-radius: 50%;
+    top: 25px;
+    z-index: 1;
+  }
+
+  /* 左側連接點位置 */
+  .timeline-item.left::before {
+    right: -10px;
+  }
+
+  /* 右側連接點位置 */
+  .timeline-item.right::before {
+    left: -10px;
+  }
+
+  /* 內容框 */
+  .timeline-content {
+    padding: 15px 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  .timeline-content h3 {
+    margin-top: 0;
+    color: #c27fb8;
+  }
+
+  .timeline-content p {
+    margin: 5px 0 0;
+    color: #555;
+  }
+
+  /* 響應式：螢幕小於 768px 時，全部項目調整為100%寬且置左 */
+  @media screen and (max-width: 768px) {
+    .timeline::after {
+      left: 20px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding-left: 50px;
+      padding-right: 25px;
+      left: 0 !important;
+    }
+
+    .timeline-item::before {
+      left: 10px !important;
+      right: auto !important;
+    }
+  }
+  
+.main-title {
+  text-align: center;
+  font-size: 36px;
+  padding: 30px 0;
+  color: #2c3e50;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.side {
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* 左側前端區 */
+.front-section {
+  margin-top: 5%;
+  height: 80%;
+  background: #e8f4ff;
+}
+
+/* 右側後端與工具區 */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  background: #fefefe;
+}
+
+/* 區域標題 */
+.section h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 8px;
+}
+
+/* 各分區背景 */
+.back-section {
+  background: #e8fef0;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.tool-section {
+  background: #fff8e1;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
+/* 圓形條 */
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#ccc 0%, #e0e0e0 0%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.circle span {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.circle i {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* 顏色分類 */
+.front {
+  background: conic-gradient(#4facfe 0%, #e0e0e0 0%);
+}
+.back {
+  background: conic-gradient(#43e97b 0%, #e0e0e0 0%);
+}
+.tool {
+  background: conic-gradient(#ffb347 0%, #e0e0e0 0%);
+}/* 區域外框 */
+.skill-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 左右分割 */
+.side {
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* 前端技能區：2個一排 */
+.skill-grid-vertical {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+/* 後端/工具技能區：橫向排列 */
+.skill-grid-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .skill-container {
+    flex-direction: column;
+  }
+
+  .skill-grid-vertical {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .skill-grid-horizontal {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .skill-grid-vertical {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 a.image {
   overflow: hidden; }
@@ -1286,7 +1708,7 @@ dl {
   dl dt {
     display: block;
     font-weight: 600;
-    margin: 0 0 1em 0; }
+    margin: 3em 0 1em 0; }
   dl dd {
     margin-left: 2em; }
 

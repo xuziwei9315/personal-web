@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>請假系統</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Vivienne</strong> location</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://www.instagram.com/vivienne_0115?igsh=cnpxMjdlMTdzbG9p" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>請假系統</h1>
+									</header>
+									<div class="image-row">
+										<span class="image main"><img src="../../images/pic03.png" alt="請假系統" onclick="openModal('../../images/pic03.png')"/></span>
+										<figure>
+											<span class="image second"><img src="../../images/sa-qrcode.png" alt="請假系統youtube" onclick="openModal('../../images/sa-qrcode.png')" /></span>
+											<figcaption>請假系統</figcaption>
+										</figure>   
+									</div>
+									<!-- Modal HTML -->
+                                    <div id="imgModal" class="modal">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <img class="modal-content" id="modalImg">
+                                    </div>
+
+                                    <script>
+                                    function openModal(src) {
+                                        const modal = document.getElementById("imgModal");
+                                        const modalImg = document.getElementById("modalImg");
+                                        modal.style.display = "block";
+                                        modalImg.src = src;
+                                    }
+
+                                    function closeModal() {
+                                        document.getElementById("imgModal").style.display = "none";
+                                    }
+
+                                    // 點擊背景關閉 modal
+                                    window.onclick = function(event) {
+                                        const modal = document.getElementById("imgModal");
+                                        if (event.target === modal) {
+                                        modal.style.display = "none";
+                                        }
+                                    }
+                                    </script>
+
+									<br>
+									<p>我們在輔仁大學這一年多的時間裡，儘管學校已提供了「FJU學生資訊入口網」
+									這個整合了許多功能及連結的網站，但卻沒有提供一個線上的請假系統。偶爾需要請
+									假是難免的，但我們都要先自行去拿取紙本假單並按照假單上的要求找對應的師長簽
+									名或通知任課教授。對於那些可能需要頻繁請假或長期請假的學生而言，他們就必須
+									時常寫信通知每位教授，增加了學生的負擔，也降低了請假流程的效率。對於老師而
+									言，需要經常登入電子郵件查看學生的請假情況，這往往會導致忽略一些學生的請假
+									通知或無法及時了解學生的情況，因此請假已成為學校需要解決的問題之一。 
+									</p>
+									<p>目前許多學校和教育機構正在將日常作業數位化，線上請假系統符合這一趨勢。
+									傳統的請假流程可能需要耗費大量紙張和人力資源，這不僅耗時費力，出錯率也比較
+									高。建立一個線上請假系統可以使流程自動化，從而節省時間和資源。學生方面可以
+									更輕鬆直觀地了解自己的出缺席情況，並控制請假狀況，而教師方面則能夠及時處理
+									請假申請和便於計分，從而提高管理和組織運作的效率。 
+									</p>
+									
+
+									<hr class="major" />
+									<h2>系統發展目的</h2>
+									<div class="row">
+										<div class="col-6 col-12-small">
+												<h3>學生端</h3>
+												<p>由於學生時常會有請假的需求，因此我們希望開發一個線上系
+												統，能夠清楚顯示出有哪些課堂的同時，也同時顯示每堂課的請假規則，避免造成因
+												不清楚規則而在分數上受到影響，讓學生能自行在網路上提交請假，並交由上課老師
+												審核，節省了自行跑請假單或是不斷發送E-mail給各科老師的時間。為了更透明化行
+												政流程，審核後除了通知學生審核結果以外，也會自動更新讓學生能夠隨時確認自己
+												的請假情況，使學生請假時能夠根據自己的請假情況來做衡量。
+												</p>	
+											</div>
+											<div class="col-6 col-12-small">
+												<h3>老師端</h3>
+												<p>除了通知老師請假人數， 清楚顯示班級的出席狀況及出席
+													率，也可以結合點名系統，自動排除已請假的學生，不會有點名時重複紀錄的問題。
+													除此之外，老師也可以針對不同假別予以不同分數，在期末時便可以自動匯出成試算
+													表顯示每個人的出席分數。由於不是每個老師都能記得每個同學的樣貌及姓名，為了
+													方便老師的核對學生身分以及請假事宜，因此我們需要做出一個功能來顯示相關資料。
+													對於頻繁請假或缺課的同學也可以提供一個管道讓老師能適時地關心同學並進行溝通，
+													建立師生之間良好關係的橋梁。
+													</p>
+											</div>
+									</div>
+
+
+									<hr class="major" />
+									<h2>系統優缺點（SWOT）分析</h2>
+									<table class="table-swot">
+										<tr>
+										<th>分類</th>
+										<th>內容</th>
+										</tr>
+										<tr>
+										<td>💪 優勢（Strengths）</td>
+										<td>
+											<ul>
+											<li>線上請假系統簡化了請假流程，節省了時間和人力成本</li>
+											<li>請假資訊可以實時更新，教師能夠及時了解學生請假情況，並結合郵件通知，能在第一時間接收請假訊息及批准駁回情況</li>
+											<li>系統化的請假記錄便於統計和分析，為學校管理提供數據支持</li>
+											<li>線上請假系統簡化了請假流程，節省了時間和人力成本</li>
+											<li>學生端首頁有課表式介面，可供學生直接截圖使用，也顯示老師設定的請假規則，讓學生更清楚哪些課接受請什麼假</li>
+											<li>有錯誤回報功能，讓使用者能第一時間與技術人員回報錯誤</li>
+											<li>請假申請的部分有長期請假功能，學生如果要請一天以上不用一天一天按，且請假時列出的課堂是已經經過篩選的，不會有按錯的問題</li>
+											<li>考慮了三種不同身分的使用者，讓同時有學生身分的助教可以不用換帳號登入</li>
+											<li>送出請假申請之後可以進行修改，當被老師駁回之後可以在不改變單號的情況下更改內容</li>
+											</ul>
+										</td>
+										</tr>
+										<tr>
+										<td>🧱 劣勢（Weaknesses）</td>
+										<td>
+											<ul>
+											<li>除了暫時還無法透過網際網路運作外，若真的運作了，系統是依賴於網絡和伺服器的穩定性，一旦出現故障，可能影響正常使用</li>
+											<li>由於公假會關聯到多個單位，審核方不僅僅有老師，還有生輔組、系秘書等，因此若使用線上請假可能會讓請假流程拖得很久</li>
+											<li>目前還只是一個雛型而已，還有蠻多沒考慮到的情況，且還未做過壓力測試，不知道是否能承載學校所有老師以及學生連線</li>
+											</ul>
+										</td>
+										</tr>
+										<tr>
+										<td>🚀 機會（Opportunities）</td>
+										<td>
+											<ul>
+											<li>可通過數據分析，為學校決策提供依據，例如學生出席率分析</li>
+											<li>開發移動端應用，進一步提升用戶體驗和使用便利性 </li>
+											<li>開發時學校仍無尚無請假系統 </li>
+											</ul>
+										</td>
+										</tr>
+										<tr>
+										<td>⚠️ 威脅（Threats）</td>
+										<td>
+											<ul>
+											<li>系統可能面臨網絡攻擊和數據洩漏的風險，需要不斷加強安全防護措施</li>
+											<li>快速發展的技術可能使當前系統需要頻繁更新和升級，增加維護成本 </li>
+											<li>學校目前正在開發，除了擁有較多學校資源，也真的可以與LDAP連結，且課堂上其他組別也正在做</li>
+											</ul>
+										</td>
+										</tr>
+									</table>
+									
+
+                                <div class="tab-content">
+                                    <img src="../../images/The AI_01.png" alt="登入畫面"><br><br>
+                                    <h4>請先登入您的帳號，並利用轉盤選擇遊戲。</h4>
+                                </div>
+                                <div class="tab-content">
+                                    <img src="../../images/The AI_02.png" alt="功能選單">
+                                    <img src="../../images/The AI_03.png" alt="功能選單"><br><br>
+                                    <h4>您選擇的是:海龜湯</h4>
+                                        <li>每一則事件將根據難易度限制提問次數，增加猜題者的謹慎程度，提高挑戰性。</li>
+                                        <li>可以有多個真人玩家同時線上回答，增加樂趣，也可以透過這個遊戲結交朋友。</li>
+                                        <li>單一玩家也可在沒有真人玩家時，與電腦匹配的AI玩家一同猜謎。</li>
+                                    
+
+                                </div>
+                                <div class="tab-content">
+                                    <img src="../../images/The AI_04.png" alt="完成頁面"><br><br>
+                                     <h4>您選擇的是:誰是臥底</h4>
+                                        <li>每一場開始時都會讓系統隨機分配物品, 玩家（含ai玩家）可以用很搞笑的方式形容自己，增加遊戲的互動性。</li>
+                                        <li>玩家依照順序形容自己的物品，不能和前面的人或是前一輪講過的描述重複。</li>
+                                        <li>除了真人玩家外，當玩家人數不足時，也會有ai玩家混合進入遊戲中，以防有太少玩家而造成人數不足等待時間過長。</li>
+                                </div>
+
+                                <script>
+                                    
+                                </script>
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									 <div class="clover-container">
+									<button class="clover-leaf" data-page="home.html" title="首頁">💚</button>
+									<button class="clover-leaf" data-page="about.html" title="關於我">💚</button>
+									<button class="clover-leaf" data-page="projects.html" title="作品集">💚</button>
+									<button class="clover-leaf" data-page="contact.html" title="聯絡我">💚</button>
+									</div>
+									<ul>
+										<li><a href="../../index.html">首頁</a></li>
+										<li>
+											<span class="opener">活動經歷</span>
+											<ul>
+												<li><a href="../Activity/Dep_society.html">系學會</a></li>
+												<li><a href="../Activity/AIESEC.html">AIESEC</a></li>
+												<li><a href="../Activity/Societies.html">社團活動</a></li>
+											</ul>
+										</li>
+										<li><a href="generic.html">Generic</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">作品集</span>
+											<ul>
+												<li><a href="../Portfolio/FD.html"><b>畢業專題-騙局雷達</b></a></li>
+												<li><a href="../Portfolio/Detective_Club.html"><b>推理AI派對-AI手遊</b></a></li>
+												<li><a href="../Portfolio/SA.html"><b>系統分析與設計-請假系統</b></a></li>
+											</ul>
+										</li>
+										
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>活動經歷</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="../../images/系學會封面.JPG" alt="" /></a>
+											<p>系學會</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../../images/AIESEC封面.jpg" alt="" /></a>
+											<p>AIESEC</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../../images/撞球社封面.jpg" alt="" /></a>
+											<p>社團活動-撞球社&烏克麗麗社</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>聯絡方式</h2>
+									</header>
+									<p>很很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。作為大學新鮮人，雖然經驗尚淺，但我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">vivienne.9931@gmail.com</a></li>
+										<li class="icon solid fa-phone">0965-323-391</li>
+										<li class="icon solid fa-home">(100)台北市中正區泰安街2-1號2樓</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy;由徐子崴，本人借助模板進行優化，以參與此次輔仁大學數位履歷活動。</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+            <script src="../../assets/js/new.js"></script>
+
+	</body>
+</html>
