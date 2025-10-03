@@ -1327,6 +1327,30 @@ input[type="radio"] + label:before {
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+     /* 手機大小容器 (固定 9:16 比例) */
+  .phone-video-wrap {
+    position: relative;
+    width: 315px;   /* 模擬手機螢幕寬度 */
+    height: 640px;  /* 模擬手機螢幕高度 */
+    border: 1px solid #000;   /* 模擬手機邊框，可刪除 */
+    border-radius: 45px;       /* 圓角 */
+    overflow: hidden;          /* 超出部分裁切掉 */
+    margin: 20px auto;         /* 置中 */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    background: #000;          /* 避免空白區塊 */
+  }
+
+  .phone-video-wrap video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;   /* 確保寬度覆蓋 */
+    min-height: 100%;  /* 確保高度覆蓋 */
+    transform: translate(-50%, -56%) scale(0.9); 
+    /* scale(1.3) 可自行調整放大倍數 */
+    object-fit: cover;
+    object-position: center;
+  }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -1967,7 +1991,7 @@ button,
   input[type="button"].large,
   button.large,
   .button.large {
-    font-size: 1em;
+    font-size: 1.2em;
     height: 3.65em;
     line-height: 3.65em; }
   input[type="submit"].primary,
