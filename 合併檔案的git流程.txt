@@ -1,0 +1,51 @@
+1️⃣ 進入專案資料夾
+cd "D:\輔大\大三\personal"
+
+2️⃣ 初始化 Git（如果還沒 init）
+git init
+
+3️⃣綁定遠端 repo
+
+（如果之前有綁定舊的遠端，先移除）
+
+git remote remove origin
+git remote add origin https://github.com/xuziwei9315/personal-web.git
+
+
+確認遠端：
+
+git remote -v
+
+4️⃣ 抓取遠端最新內容
+git fetch origin
+這時候你本地還是你的版本，遠端的歷史會被下載下來，但不會自動合併。
+
+5️⃣建立本地 commit
+git add .
+git commit -m "本地 personal 新增內容"
+
+6️⃣ 合併遠端內容到本地
+git merge origin/main --allow-unrelated-histories
+
+
+--allow-unrelated-histories 是因為遠端與本地可能之前沒有共同歷史。
+
+如果出現衝突，Git 會標註在檔案中：
+
+<<<<<<< HEAD
+本地版本
+=======
+遠端版本
+>>>>>>> origin/main
+
+
+打開檔案，保留你想要的內容
+
+編輯完成後：
+
+git add .
+git commit -m "解決合併衝突"
+
+
+7️⃣推送合併後的內容到 GitHub
+git push origin main
