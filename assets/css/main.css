@@ -1252,57 +1252,6 @@ input[type="radio"] + label:before {
 .tab-content.text-left dd {
   text-align: left;
 }
-.carousel {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.6s ease;
-}
-
-.carousel-item {
-  min-width: 100%;
-  transition: opacity 1s;
-}
-
-.carousel-item img {
-  width: 100%;
-  display: block;
-}
-
-button.prev,
-button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.6);
-  color: #333;
-  border: none;
-  padding: 12px 16px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 22px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-button.prev:hover,
-button.next:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-50%) scale(1.1);
-  color: #000;
-}
-
-button.prev { left: 20px; }
-button.next { right: 20px; }
-
 
 
  
