@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
 	<body class="is-preload">
 
@@ -101,38 +102,69 @@
                                         <button class="button large" onclick="showTab(0)">吳導師</button>
                                         <button class="button large" onclick="showTab(1)">學妹</button>
                                         <button class="button large" onclick="showTab(2)">外師</button>
+										<button class="button large" onclick="showTab(3)">cjm</button>
+
                                     </div>
 									
 
                                 <div class="tab-content">
-									
-                                    <img src="../../images/Figma study_08.png" alt="登入畫面"><br><br>
-									<img src="../..images/Figma study_09.png" alt="登入畫面"><br><br>
-									<img src="../../images/Figma study_10.png" alt="登入畫面"><br><br>
-                                    <h4>請先登入您的帳號，並利用轉盤選擇遊戲。</h4>
+									<div class="swiper mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><img src="../../images/Figma study_08.png" alt="Slide 1"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_09.png" alt="Slide 2"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_10.png" alt="Slide 3"></div>
+										</div>
+
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										
+										<div class="swiper-pagination"></div>
+									</div>
                                 </div>
+
                                 <div class="tab-content">
-                                    <img src="../../images/The AI_02.png" alt="功能選單">
-                                    <img src="../../images/The AI_03.png" alt="功能選單"><br><br>
-                                    <h4>您選擇的是:海龜湯</h4>
-                                        <li>每一則事件將根據難易度限制提問次數，增加猜題者的謹慎程度，提高挑戰性。</li>
-                                        <li>可以有多個真人玩家同時線上回答，增加樂趣，也可以透過這個遊戲結交朋友。</li>
-                                        <li>單一玩家也可在沒有真人玩家時，與電腦匹配的AI玩家一同猜謎。</li>
-                                    
+									<div class="swiper mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><img src="../../images/Figma study_11.png" alt="Slide 1"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_12.png" alt="Slide 2"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_13.png" alt="Slide 3"></div>
+										</div>
 
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										
+										<div class="swiper-pagination"></div>
+									</div>
                                 </div>
+
                                 <div class="tab-content">
-                                    <img src="../../images/The AI_04.png" alt="完成頁面"><br><br>
-                                     <h4>您選擇的是:誰是臥底</h4>
-                                        <li>每一場開始時都會讓系統隨機分配物品, 玩家（含ai玩家）可以用很搞笑的方式形容自己，增加遊戲的互動性。</li>
-                                        <li>玩家依照順序形容自己的物品，不能和前面的人或是前一輪講過的描述重複。</li>
-                                        <li>除了真人玩家外，當玩家人數不足時，也會有ai玩家混合進入遊戲中，以防有太少玩家而造成人數不足等待時間過長。</li>
+									<div class="swiper mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><img src="../../images/Figma study_14.png" alt="Slide 1"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_15.png" alt="Slide 2"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_16.png" alt="Slide 3"></div>
+										</div>
+
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										
+										<div class="swiper-pagination"></div>
+									</div>
                                 </div>
+								<div class="tab-content">
+									<div class="swiper mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><img src="../../images/Figma study_17.png" alt="Slide 1"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_18.png" alt="Slide 2"></div>
+											<div class="swiper-slide"><img src="../../images/Figma study_19.png" alt="Slide 3"></div>
+										</div>
 
-                                <script>
-                                    
-                                </script>
-
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										
+										<div class="swiper-pagination"></div>
+									</div>
+                                </div>
 
 								</section>
 
@@ -240,20 +272,30 @@
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
             <script src="../../assets/js/new.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 			<script>
-			let index = 0;
-			const carousel = document.getElementById("carousel-figma");
-			const total = document.querySelectorAll(".carousel-figma-item").length;
-
-			function moveSlide(step) {
-				index = (index + step + total) % total;
-				carousel.style.transform = `translateX(${-index * 100}%)`;
-			}
-
-			// 自動播放
-			setInterval(() => {
-				moveSlide(1);
-			}, 3000);
+				var swiper = new Swiper(".mySwiper", {
+				// A. 基本設定
+				loop: true, // 啟用循環播放 (播完最後一張會回到第一張)
+										
+				// B. 自動播放設定
+				autoplay: {
+				delay: 4000, // 每 4000 毫秒 (4 秒) 切換一次
+				disableOnInteraction: false, // 手動操作後不停止自動播放
+				},
+				// C. 導航箭頭設定
+					navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+										
+				// D. 底部圓點指示器設定
+					pagination: {
+					el: ".swiper-pagination",
+					clickable: true, // 圓點可以點擊切換
+					},
+					});
 			</script>
 	</body>
 </html>

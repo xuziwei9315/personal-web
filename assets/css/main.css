@@ -1252,6 +1252,37 @@ input[type="radio"] + label:before {
 .tab-content.text-left dd {
   text-align: left;
 }
+/* 2. 基本 CSS 樣式，設定輪播容器的尺寸 */
+									.mySwiper {
+										width: 80%; /* 輪播寬度佔 80% */
+										max-width: 1000px;
+										height: 520px; /* 輪播高度 */
+										margin: 50px auto; /* 置中 */
+									}
+									/* 確保圖片填滿投影片並保持比例 */
+									.swiper-slide img {
+										display: block;
+										width: 100%;
+										height: 100%;
+										object-fit: cover;
+									}
+                  /* 設置箭頭周圍的背景 */
+                .swiper-button-next,
+                .swiper-button-prev {
+                  color: white !important; /* 箭頭顏色設為白色 */
+                  background-color: rgba(0, 0, 0, 0.5); /* 背景顏色設為半透明黑色 */
+                  border-radius: 50%; /* 讓背景變成圓形 */
+                  width: 40px; /* 調整大小 */
+                  height: 40px;
+                }
+
+                /* 確保箭頭在圓圈中居中（可選，但建議加上） */
+                .swiper-button-next::after,
+                .swiper-button-prev::after {
+                    font-size: 16px !important; /* 調整箭頭圖示大小 */
+                    line-height: 40px; /* 幫助垂直居中 */
+                }
+
 
 
  
@@ -1300,7 +1331,7 @@ input[type="radio"] + label:before {
     position: absolute;
     top: 40px;
     right: 60px;
-    color: #fff;
+    color: #100404;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
@@ -1317,7 +1348,7 @@ input[type="radio"] + label:before {
 
     .button.active {
       background: #C4A9C9;
-      color: white;
+      color: rgb(255, 255, 255);
     }
 
     .tab-content {
