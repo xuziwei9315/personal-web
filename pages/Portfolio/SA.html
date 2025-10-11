@@ -10,11 +10,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+				
 
 				<!-- Main -->
 					<div id="main">
@@ -24,12 +26,14 @@
 								<header id="header">
 									<a href="../../index.html" class="logo"><strong>Vivienne</strong> location</a>
 									<ul class="icons">
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://www.facebook.com/xu.zi.wai.207641" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="https://www.instagram.com/vivienne_0115?igsh=cnpxMjdlMTdzbG9p" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+										<li><a href="https://mail.google.com/mail/?view=cm&to=vivienne.3391@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 
 									</ul>
 								</header>
+
+								
 
 							<!-- Content -->
 								<section>
@@ -70,6 +74,7 @@
                                     }
                                     </script>
 
+
 									<br>
 									<p>我們在輔仁大學這一年多的時間裡，儘管學校已提供了「FJU學生資訊入口網」
 									這個整合了許多功能及連結的網站，但卻沒有提供一個線上的請假系統。偶爾需要請
@@ -85,6 +90,26 @@
 									更輕鬆直觀地了解自己的出缺席情況，並控制請假狀況，而教師方面則能夠及時處理
 									請假申請和便於計分，從而提高管理和組織運作的效率。 
 									</p>
+									<div class="swiper mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><img src="../../images/sa_01.png" alt="Slide 1"></div>
+											<div class="swiper-slide"><img src="../../images/sa_02.png" alt="Slide 2"></div>
+											<div class="swiper-slide"><img src="../../images/sa_03.png" alt="Slide 3"></div>
+											<div class="swiper-slide"><img src="../../images/sa_04.png" alt="Slide 4"></div>
+											<div class="swiper-slide"><img src="../../images/sa_05.png" alt="Slide 5"></div>
+											<div class="swiper-slide"><img src="../../images/sa_06.png" alt="Slide 6"></div>
+											<div class="swiper-slide"><img src="../../images/sa_07.png" alt="Slide 7"></div>
+											<div class="swiper-slide"><img src="../../images/sa_08.png" alt="Slide 8"></div>
+											<div class="swiper-slide"><img src="../../images/sa_09.png" alt="Slide 9"></div>
+											<div class="swiper-slide"><img src="../../images/sa_10.png" alt="Slide 10"></div>
+											<div class="swiper-slide"><img src="../../images/sa_11.png" alt="Slide 11"></div>
+										</div>
+
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										
+										<div class="swiper-pagination"></div>
+									</div>
 									
 
 									<hr class="major" />
@@ -277,17 +302,17 @@
 									<header class="major">
 										<h2>聯絡方式</h2>
 									</header>
-									<p>很很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。作為大學新鮮人，雖然經驗尚淺，但我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
+									<p>很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。作為大學新鮮人，雖然經驗尚淺，但我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">vivienne.9931@gmail.com</a></li>
 										<li class="icon solid fa-phone">0965-323-391</li>
-										<li class="icon solid fa-home">(100)台北市中正區泰安街2-1號2樓</li>
+										<!--<li class="icon solid fa-home">(100)台北市中正區泰安街2-1號2樓</li> -->
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy;由徐子崴，本人借助模板進行優化，以參與此次輔仁大學數位履歷活動。</p>
+									<p class="copyright">&copy;由vivienne撰寫網頁內容，請勿隨意使用。</p>
 								</footer>
 
 						</div>
@@ -302,6 +327,31 @@
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
             <script src="../../assets/js/new.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+			<script>
+				var swiper = new Swiper(".mySwiper", {
+				// A. 基本設定
+				loop: true, // 啟用循環播放 (播完最後一張會回到第一張)
+										
+				// B. 自動播放設定
+				autoplay: {
+				delay: 4000, // 每 4000 毫秒 (4 秒) 切換一次
+				disableOnInteraction: false, // 手動操作後不停止自動播放
+				},
+				// C. 導航箭頭設定
+					navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+										
+				// D. 底部圓點指示器設定
+					pagination: {
+					el: ".swiper-pagination",
+					clickable: true, // 圓點可以點擊切換
+					},
+					});
+			</script>
 
 	</body>
 </html>
