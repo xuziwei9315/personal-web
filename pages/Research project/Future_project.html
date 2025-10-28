@@ -39,8 +39,40 @@
 										<h2 style="text-align: center;">人機協作下的組織智慧：生成式 AI對決策文化與權力動態之影響</h2>
 										<h3 style="text-align: left;">Organizational Intelligence in Human-Machine Collaboration:The Impact of Generative AI on Decision-Making Culture and Power Dynamics</h3>
 									</header>
+									<div class="image-row">
+										<span class="image main"><img style="height: 800px;" src="../../images/research/f-research.jpg" alt="流程圖" /></span>
+										<figure>
+											<span class="image second"><img src="../../images/research/re_01.png" alt="架構圖"onclick="openModal('../../images/research/re_01.png')" /></span>
+											<figcaption>H.I.G.F核心框架</figcaption>
+										</figure>
+									</div>
+									<!-- Modal HTML -->
+                                    <div id="imgModal" class="modal">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <img class="modal-content" id="modalImg">
+                                    </div>
 
-									<img style="width: 700px; cursor: pointer; border-radius: 8px; margin-left: 200px;"  src="../../images/research/re_01.png" alt="流程圖"onclick="openModal('../../images/research/f-research.jpg')" /></span>
+                                    <script>
+                                    function openModal(src) {
+                                        const modal = document.getElementById("imgModal");
+                                        const modalImg = document.getElementById("modalImg");
+                                        modal.style.display = "block";
+                                        modalImg.src = src;
+                                    }
+
+                                    function closeModal() {
+                                        document.getElementById("imgModal").style.display = "none";
+                                    }
+
+                                    // 點擊背景關閉 modal
+                                    window.onclick = function(event) {
+                                        const modal = document.getElementById("imgModal");
+                                        if (event.target === modal) {
+                                        modal.style.display = "none";
+                                        }
+                                    }
+                                    </script><br>
+
 
 
 									<!-- Content -->
@@ -259,7 +291,7 @@
 									<header class="major">
 										<h2>聯絡方式</h2>
 									</header>
-									<p>很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。作為大學新鮮人，雖然經驗尚淺，但我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
+									<p>很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">vivienne.9931@gmail.com</a></li>
 										<li class="icon solid fa-phone">0965-323-391</li>
