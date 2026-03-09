@@ -1283,7 +1283,247 @@ input[type="radio"] + label:before {
                     line-height: 40px; /* 幫助垂直居中 */
                 }
 
-                
+
+    /*作品集的button篩選*/
+        .post-filter {
+          display: flex;         /* 開啟彈性佈局 */
+          justify-content: center; /* 水平置中 */
+          margin-bottom: 50px;
+            }
+        .post-filter button {
+          border: none;
+          margin-right: 10px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 10px;
+        }
+        .post-filter button.active {
+          background: #E7D7E9;
+          color: white;
+        }
+        .post-filter button:hover {
+          background: #E7D7E9;
+          color: white;
+        }
+        /*首頁工作經驗*/
+    .work-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:25px;
+        margin-top:40px;
+    }
+
+    .work-card{
+        background:#f8f8f8;
+        padding:25px;
+        border-radius:10px;
+        text-align:center;
+        transition:0.3s;
+    }
+
+    .work-card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .work-card .icon{
+        font-size:28px;
+        color:#4acaa8;
+        margin-bottom:10px;
+    }
+
+    .work-card h3{
+        margin:5px 0;
+        font-size:16px;
+    }
+
+    .work-card p{
+        margin:5px 0;
+        font-size:14px;
+        color:#666;
+    }
+
+    .work-card small{
+        color:#999;
+    }
+    .projects{
+    margin-top:90px;
+    max-width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    }
+
+    .projects h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:28px;
+    }
+
+/* 首頁 research */
+
+    .featured-project{
+    background:#f7f7f7;
+    padding:40px;
+    border-radius:16px;
+    margin-bottom:35px;
+    transition:0.3s;
+    }
+
+    .featured-project:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    .meta{
+    color:#777;
+    font-size:14px;
+    margin-bottom:15px;
+    }
+
+    .description{
+    margin-bottom:15px;
+    line-height:1.6;
+    }
+
+    /* tech tags */
+
+    .tech span{
+    display:inline-block;
+    background:#ececec;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin:5px 6px 0 0;
+    }
+
+    /* project row */
+
+    .project-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fafafa;
+    padding:30px 35px;
+    border-radius:14px;
+    transition:0.3s;
+    }
+
+    .project-row:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.07);
+    }
+
+    .project-left{
+    max-width:70%;
+    }
+
+    .project-right{
+    text-align:right;
+    }
+
+    .award{
+    color:#555;
+    margin-bottom:10px;
+    }
+
+    /* button */
+
+    .btn{
+    display:inline-block;
+    margin-top:15px;
+    font-weight:600;
+    }
+    .more-projects-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .more-projects-note a {
+      color: #0070f3;
+    }
+    .side-project {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.side-project h3 {
+  margin-bottom: 0.5rem;
+}
+
+.side-project .description {
+  margin-bottom: 1rem;
+}
+
+.side-project .project-footer {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  gap: 0.5rem;
+}
+
+.side-project .btn {
+  align-self: start; /* 按鈕靠左 */
+}
+            
+
+/*about中的skills*/
+.skills{
+margin-top:6rem;
+}
+
+.skills h2{
+margin-bottom:3rem;
+font-weight:600;
+letter-spacing:0.03em;
+}
+
+.skill-group{
+margin-bottom:2rem;
+padding-bottom:1rem;
+border-bottom:1px solid #f0f0f0;
+}
+
+.skill-group h3{
+font-size:1.05rem;
+margin-bottom:14px;
+color:#333;
+}
+
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.tags span{
+padding:7px 14px;
+border-radius:30px;
+font-size:0.85rem;
+border:1px solid #e5e5e5;
+background:rgba(250,250,250,0.8);
+
+transition:all 0.2s ease;
+}
+
+/* 高級 hover */
+.tags span:hover{
+background:#111;
+color:white;
+border-color:#111;
+transform:translateY(-2px);
+}
+.skills-intro{
+max-width:600px;
+color:#666;
+margin-bottom:2.5rem;
+line-height:1.6;
+}
+.skills{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
 
  
@@ -1983,7 +2223,7 @@ button,
   border-radius: 0.375em;
   border: 0;
   box-shadow: inset 0 0 0 2px #E7D7E9;
-  color: #E7D7E9 !important;
+  color: #b26eba !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Roboto Slab", serif;
@@ -2688,7 +2928,7 @@ button,
   user-select: none;
   color: #3d4449;
   font-family: "Roboto Slab", serif;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.075em;
   list-style: none;
   margin-bottom: 0;
@@ -2699,7 +2939,7 @@ button,
     color: inherit;
     cursor: pointer;
     display: block;
-    font-size: 0.9em;
+    font-size: 1.1em;
     padding: 0.625em 0; }
     #menu ul a:hover, #menu ul span:hover {
       color: #E7D7E9; }
