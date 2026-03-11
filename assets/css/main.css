@@ -1467,16 +1467,8 @@ input[type="radio"] + label:before {
 }
             
 
-/*about中的skills*/
-.skills{
-margin-top:6rem;
-}
+/*skills中的skills*/
 
-.skills h2{
-margin-bottom:3rem;
-font-weight:600;
-letter-spacing:0.03em;
-}
 
 .skill-group{
 margin-bottom:2rem;
@@ -1524,6 +1516,106 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
 }
+
+/*skills中的awards*/
+#achievements{
+margin:auto;
+padding:100px 20px;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+#achievements h2{
+font-size:36px;
+margin-bottom:50px;
+border-bottom:3px solid #eee;
+padding-bottom:10px;
+}
+
+.achievement-section{
+margin-bottom:70px;
+}
+
+.achievement-section h3{
+font-size:24px;
+margin-bottom:25px;
+border-bottom:1px solid #ddd;
+padding-bottom:8px;
+}
+
+
+/* Research Award */
+
+.research-award{
+display:flex;
+gap:30px;
+align-items:flex-start;
+background:#fff;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transition:all .3s ease;
+}
+
+.research-award:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.award-img img{
+width:250px;
+border-radius:6px;
+}
+
+.award-text h4{
+font-size:20px;
+margin-bottom:5px;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:15px;
+}
+
+.topic{
+margin-bottom:10px;
+line-height:1.6;
+}
+
+.advisor{
+font-style:italic;
+margin-bottom:10px;
+}
+
+.year{
+color:#777;
+font-size:14px;
+}
+
+
+/* Academic Honors */
+
+.honor-list{
+list-style:none;
+padding:0;
+}
+
+.honor-list li{
+display:flex;
+gap:25px;
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.honor-list .year{
+width:60px;
+font-weight:bold;
+color:#444;
+}
+
+.honor-list .title{
+color:#555;
+}
+
 
 
  

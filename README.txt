@@ -28,3 +28,10 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+
+	hi vivienne，這是設計的第一個網站的第三個版本。
+	目前index是首頁，其餘皆在pages，element和generic是模板勿刪!!
+	images一定要分類
+	activity兩個空，未寫。皆在Dep
+	
