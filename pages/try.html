@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint | My Future Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --bg-dark: #1a1a1a;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --accent: #0984e3; /* 科技藍 */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 100px 10%;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        /* --- Section 1: Research Interest (Side-Label Flow) --- */
+        #research {
+            background-color: var(--bg-light);
+        }
+
+        .research-item {
+            display: flex;
+            margin-bottom: 60px;
+            border-left: 2px solid #dfe6e9;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .research-num {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #b2bec3;
+            margin-right: 40px;
+            line-height: 1;
+        }
+
+        .research-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        /* --- Section 2: Study Plan (Minimalist Stepper) --- */
+        #study {
+            background-color: var(--bg-white);
+        }
+
+        .stepper {
+            max-width: 800px;
+        }
+
+        .step {
+            position: relative;
+            padding-bottom: 50px;
+            padding-left: 40px;
+            border-left: 1px solid var(--accent);
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 11px;
+            height: 11px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .step-phase {
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .step h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        /* --- Section 3: Career Planning (Typography Focused) --- */
+        #career {
+            background-color: var(--bg-dark);
+            color: #fff;
+        }
+
+        .career-flow {
+            max-width: 900px;
+        }
+
+        .career-item {
+            margin-bottom: 80px;
+        }
+
+        .career-item span {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .career-item h2 {
+            font-size: 2.5rem;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .career-item p {
+            color: #b2bec3;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .research-item { flex-direction: column; border-left: none; padding-left: 0; }
+            .career-item h2 { font-size: 1.8rem; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="research">
+        <div class="section-title">01 / Research Interests</div>
+        <div class="research-item">
+            <div class="research-num">01</div>
+            <div class="research-content">
+                <h3>LLM & 語境深度解析</h3>
+                <p>專注於大型語言模型在非結構化數據中的情緒捕捉，解決電商環境中諷刺、反詰等語境缺失問題，為產品決策提供「人性洞察」。</p>
+            </div>
+        </div>
+        <div class="research-item">
+            <div class="research-num">02</div>
+            <div class="research-content">
+                <h3>隱性詐騙偵測系統</h3>
+                <p>延續「騙局雷達」開發經驗，探索 LLM 微調技術如何識別情感操控話術，建立高效且低延遲的資安防護框架。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="study">
+        <div class="section-title">02 / Study Plan</div>
+        <div class="stepper">
+            <div class="step">
+                <span class="step-phase">Phase 1: Deep Tech</span>
+                <h3>LLM 微調與安全指標定義</h3>
+                <p>掌握微調技術與 RAG 架構，定義詐騙偵測之準確率、召回率與推理延遲等核心 KPI。</p>
+            </div>
+            <div class="step">
+                <span class="step-phase">Phase 2: Integration</span>
+                <h3>數位金融實務與場域驗證</h3>
+                <p>結合 TABF 實習經驗，將模型導入數位金融情境進行 PoC 測試，評估技術可行性與商業價值。</p>
+            </div>
+            <div class="step" style="border-left: none;">
+                <span class="step-phase">Phase 3: Impact</span>
+                <h3>論文發表與成果遷移</h3>
+                <p>完成學位論文，並將研究成果應用於電商或金融資安場域，實現「高精準、低成本」的防護方案。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="career">
+        <div class="section-title">03 / Career Vision</div>
+        <div class="career-flow">
+            <div class="career-item">
+                <span>Short-term Goal</span>
+                <h2>Technical PM Foundation</h2>
+                <p>在 AI 開發前線紮根，成為能與工程師深度對話、精準評估模型限制的 AI 專案經理。</p>
+            </div>
+            <div class="career-item">
+                <span>Mid-term Goal</span>
+                <h2>AI Product Leadership</h2>
+                <p>主導具備市場競爭力的 AI 產品，特別是結合電商洞察與數位金融的創新型解決方案。</p>
+            </div>
+            <div class="career-item">
+                <span>Long-term Vision</span>
+                <h2>Strategic AI Leader</h2>
+                <p>縮短商業需求與技術實作的鴻溝，在數位金融轉型浪潮中，推動具備社會責任的 AI 技術治理。</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

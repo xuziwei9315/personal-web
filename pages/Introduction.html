@@ -271,6 +271,7 @@
 										<li><a href="../pages/Skills&Awards.html">Skills & Awards</a></li>
 										<li><a href="../pages/Portfolio.html">Projects & Research</a></li>
 										<li><a href="../pages/Activity/Dep_society.html">Activity</a></li>
+										<li><a href="./pages/Vision.html">Vision</a></li>
 										
 									</ul>
 								</nav>
@@ -307,37 +308,6 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 			<script src="../assets/js/new.js"></script>
-			<script>
-				const counters = document.querySelectorAll(".stat-number");
-				const speed = 200;
-
-				const observer = new IntersectionObserver(entries=>{
-				entries.forEach(entry=>{
-					if(entry.isIntersecting){
-					const counter = entry.target;
-					const updateCount = ()=>{
-						const target = +counter.getAttribute("data-target");
-						const count = +counter.innerText;
-						const inc = target / speed;
-						if(count < target){
-						counter.innerText = Math.ceil(count + inc);
-						setTimeout(updateCount,10);
-						}else{
-						counter.innerText = target;
-						}
-					};
-					if(counter.dataset.target){
-						updateCount();
-					}
-					observer.unobserve(counter);
-					}
-				});
-				});
-
-				counters.forEach(counter=>{
-				observer.observe(counter);
-				});
-				</script>
 
 	</body>
 </html>
