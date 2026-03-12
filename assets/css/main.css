@@ -2235,7 +2235,7 @@ section{
 
 /* Study Plan */
 :root{
---accent:#4acaa8;
+--accent:#b556a3;
 --bg:#fafafa;
 --text:#2d3436;
 }
@@ -2370,39 +2370,6 @@ gap:10px;
 
 
 
-
-
-
-
-/* Career */
-
-
-.career-flow{
-    max-width:900px;
-}
-
-.career-item{
-    margin-bottom:80px;
-}
-
-.career-item span{
-    color:var(--accent);
-    font-size:0.8rem;
-    font-weight:700;
-    display:block;
-    margin-bottom:10px;
-}
-
-.career-item h2{
-    font-size:2.5rem;
-    margin:0 0 15px 0;
-}
-
-.career-item p{
-    color:#b2bec3;
-    font-size:1.1rem;
-    max-width:600px;
-}
 
 
 
