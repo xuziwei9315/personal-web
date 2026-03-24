@@ -1312,6 +1312,26 @@ input[type="radio"] + label:before {
         gap:25px;
         margin-top:40px;
     }
+    /* Laptop */
+    @media (max-width: 1200px){
+        .work-grid{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* Tablet */
+    @media (max-width: 900px){
+        .work-grid{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px){
+        .work-grid{
+            grid-template-columns: 1fr;
+        }
+    }
 
     .work-card{
         background:#f8f8f8;
@@ -1544,51 +1564,75 @@ padding-bottom:8px;
 
 
 /* Research Award */
-
 .research-award{
-display:flex;
-gap:30px;
-align-items:flex-start;
-background:#fff;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-transition:all .3s ease;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all .3s ease;
 }
 
 .research-award:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .award-img img{
-width:250px;
-border-radius:6px;
+    width: 250px;
+    border-radius: 6px;
 }
 
 .award-text h4{
-font-size:20px;
-margin-bottom:5px;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .subtitle{
-color:#666;
-margin-bottom:15px;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 .topic{
-margin-bottom:10px;
-line-height:1.6;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .advisor{
-font-style:italic;
-margin-bottom:10px;
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
 .year{
-color:#777;
-font-size:14px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* ===== 平板 ===== */
+@media (max-width: 900px){
+    .award-img img{
+        width: 180px;
+    }
+}
+
+/* ===== 手機 ===== */
+@media (max-width: 600px){
+    .research-award{
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .award-img img{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .award-text h4{
+        font-size: 18px;
+    }
 }
 
 
@@ -2289,10 +2333,6 @@ margin-top:6px;
 
 
 
-
-
-
-
 /* TABLET */
 
 @media (max-width:900px){
@@ -2302,12 +2342,6 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
-
-
-
-
-
-
 
 /* MOBILE */
 
