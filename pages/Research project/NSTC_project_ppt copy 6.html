@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>語意與情緒分析結果 - ICIM 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url("https://www.genspark.ai/image_placeholder.png");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #ffffff;
+        }
+        
+        .slide-container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px);
+            background-size: 80px 80px, 120px 120px, 100px 100px;
+        }
+        
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .title-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .title-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .title-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        
+        .title-sub {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .page-number {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .main-content {
+            position: absolute;
+            top: 110px;
+            left: 60px;
+            right: 60px;
+            height: 570px;
+            display: flex;
+            gap: 30px;
+            min-height: 0;
+            overflow: hidden;
+            align-items: stretch;
+        }
+        
+        .left-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .right-section {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .section-card.flex-grow {
+            flex-grow: 1;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .card-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            flex-grow: 1;
+            min-height: 0;
+            overflow-y: auto;
+        }
+        
+        .comparison-item {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .comparison-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-type {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        
+        .comparison-status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        .status-good {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        
+        .status-warning {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+        
+        .comparison-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        
+        .comparison-fill {
+            height: 100%;
+            border-radius: 5px;
+        }
+        
+        .fill-good {
+            background: linear-gradient(90deg, #22c55e, #4ade80);
+        }
+        
+        .fill-warning {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        }
+        
+        .emotion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            flex-grow: 1;
+            min-height: 0;
+            overflow-y: auto;
+        }
+        
+        .emotion-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .emotion-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .emotion-icon.greed { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .emotion-icon.urgency { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .emotion-icon.fear { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .emotion-icon.trust { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        
+        .emotion-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+        
+        .emotion-value {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chart-title i {
+            color: #3b82f6;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .insight-text {
+            font-size: 15px;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+        
+        .insight-highlight {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-pattern"></div>
+<div class="header">
+<div class="title-section">
+<div class="title-icon"><i class="fas fa-chart-line"></i></div>
+<div>
+<div class="title-text">語意與情緒分析結果</div>
+<div class="title-sub">Keyword vs Implicit 詐騙辨識差異分析</div>
+</div>
+</div>
+<div class="page-number">07 / 10</div>
+</div>
+<div class="main-content">
+<!-- Left Section -->
+<div class="left-section">
+<div class="section-card flex-grow" style="flex: 1.35; min-height: 0;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-search"></i></div>
+<div>
+<div class="card-title">Keyword vs Implicit 詐騙辨識比較</div>
+<div class="card-subtitle">不同類型詐騙的辨識效果分析</div>
+</div>
+</div>
+<div class="comparison-grid">
+<div class="comparison-item">
+<div class="comparison-header">
+<div class="comparison-type">Keyword 詐騙</div>
+<div class="comparison-status status-good">高準確率</div>
+</div>
+<div style="font-size: 13px; color: #94a3b8; margin-bottom: 5px;">包含明顯關鍵字的訊息</div>
+<div class="comparison-bar">
+<div class="comparison-fill fill-good" style="width: 95%;"></div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: #94a3b8;">
+<span>辨識率: 95%</span>
+<span>多數模型可辨識</span>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-header">
+<div class="comparison-type">Implicit 詐騙</div>
+<div class="comparison-status status-warning">需加強</div>
+</div>
+<div style="font-size: 13px; color: #94a3b8; margin-bottom: 5px;">隱性語境與情緒操控</div>
+<div class="comparison-bar">
+<div class="comparison-fill fill-warning" style="width: 72%;"></div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: #94a3b8;">
+<span>辨識率: 72%</span>
+<span>傳統模型易漏判</span>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-header">
+<div class="comparison-type">情緒操控型</div>
+<div class="comparison-status status-good">顯著改善</div>
+</div>
+<div style="font-size: 13px; color: #94a3b8; margin-bottom: 5px;">加入情緒條件後</div>
+<div class="comparison-bar">
+<div class="comparison-fill fill-good" style="width: 88%;"></div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: #94a3b8;">
+<span>辨識率: 88%</span>
+<span>+16% 提升</span>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-header">
+<div class="comparison-type">語境理解</div>
+<div class="comparison-status status-good">最佳</div>
+</div>
+<div style="font-size: 13px; color: #94a3b8; margin-bottom: 5px;">Emotion-LoRA模型</div>
+<div class="comparison-bar">
+<div class="comparison-fill fill-good" style="width: 94%;"></div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: #94a3b8;">
+<span>辨識率: 94%</span>
+<span>顯著優於基線</span>
+</div>
+</div>
+</div>
+</div>
+<div class="section-card" style="flex: 0.85; min-height: 0;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-brain"></i></div>
+<div>
+<div class="card-title">情緒類型分析</div>
+<div class="card-subtitle">詐騙訊息中的情緒操控策略</div>
+</div>
+</div>
+<div class="emotion-grid">
+<div class="emotion-item">
+<div class="emotion-icon greed"><i class="fas fa-coins"></i></div>
+<div>
+<div class="emotion-text">貪婪 (Greed)</div>
+<div class="emotion-value">佔比 35%</div>
+</div>
+</div>
+<div class="emotion-item">
+<div class="emotion-icon urgency"><i class="fas fa-clock"></i></div>
+<div>
+<div class="emotion-text">緊迫 (Urgency)</div>
+<div class="emotion-value">佔比 28%</div>
+</div>
+</div>
+<div class="emotion-item">
+<div class="emotion-icon fear"><i class="fas fa-exclamation-triangle"></i></div>
+<div>
+<div class="emotion-text">恐懼 (Fear)</div>
+<div class="emotion-value">佔比 22%</div>
+</div>
+</div>
+<div class="emotion-item">
+<div class="emotion-icon trust"><i class="fas fa-handshake"></i></div>
+<div>
+<div class="emotion-text">信任 (Trust)</div>
+<div class="emotion-value">佔比 15%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Section -->
+<div class="right-section">
+<div class="section-card flex-grow" style="flex: 1.15; min-height: 0;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+<div>
+<div class="card-title">模型效能提升</div>
+<div class="card-subtitle">情緒條件化效果</div>
+</div>
+</div>
+<div class="chart-container">
+<div class="chart-title">
+<i class="fas fa-chart-line"></i>
+                            辨識率提升趨勢
+                        </div>
+<div style="text-align: center; padding: 10px;">
+<div style="font-size: 52px; font-weight: 800; color: #3b82f6; line-height: 1; letter-spacing: -2px;">+22%</div>
+<div style="font-size: 16px; color: #94a3b8; margin-top: 15px; font-weight: 500;">整體辨識率提升</div>
+</div>
+</div>
+</div>
+<div class="section-card" style="flex: 0.95; min-height: 0;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+<div>
+<div class="card-title">關鍵發現</div>
+<div class="card-subtitle">研究結論</div>
+</div>
+</div>
+<div class="insight-box">
+<div class="insight-text">
+<span class="insight-highlight">情緒與語境理解</span>是辨識隱性詐騙的關鍵因素。加入情緒條件後，模型對隱性詐騙的辨識能力顯著提升，特別是在<span class="insight-highlight">緊迫感</span>和<span class="insight-highlight">信任建立</span>類型的詐騙訊息中表現優異。
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

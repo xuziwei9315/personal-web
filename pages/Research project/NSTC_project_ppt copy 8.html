@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>結論與貢獻 - ICIM 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url("https://www.genspark.ai/image_placeholder.png");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Noto Sans TC', sans-serif;
+            background: #0f172a;
+            color: #ffffff;
+        }
+        
+        .slide-container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px);
+            background-size: 80px 80px, 120px 120px, 100px 100px;
+        }
+        
+        .header {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .title-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .title-icon {
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .title-text {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        
+        .title-sub {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .page-number {
+            font-size: 18px;
+            color: #475569;
+            font-weight: 500;
+        }
+        
+        .main-content {
+            position: absolute;
+            top: 130px;
+            left: 60px;
+            width: 1160px;
+            height: 550px;
+            max-width: calc(100% - 120px);
+            display: flex;
+            gap: 30px;
+            min-height: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .card-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .conclusion-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+        }
+        
+        .conclusion-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+            min-height: 0;
+        }
+        
+        .conclusion-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .conclusion-content {
+            flex: 1;
+        }
+        
+        .conclusion-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        
+        .conclusion-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+        
+        .contribution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 14px;
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+        }
+        
+        .contribution-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .contribution-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .contribution-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .contribution-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .contribution-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #60a5fa;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-pattern"></div>
+<div class="header">
+<div class="title-section">
+<div class="title-icon"><i class="fas fa-trophy"></i></div>
+<div>
+<div class="title-text">結論與貢獻</div>
+<div class="title-sub">研究結論與學術貢獻總結</div>
+</div>
+</div>
+<div class="page-number">09 / 10</div>
+</div>
+<div class="main-content">
+<!-- Left Section: Research Conclusions -->
+<div class="left-section">
+<div class="section-card">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-check-circle"></i></div>
+<div>
+<div class="card-title">研究結論</div>
+<div class="card-subtitle">四大核心發現</div>
+</div>
+</div>
+<div class="conclusion-list">
+<div class="conclusion-item">
+<div class="conclusion-icon"><i class="fas fa-brain"></i></div>
+<div class="conclusion-content">
+<div class="conclusion-title">LLM 優於傳統 ML</div>
+<div class="conclusion-desc">大型語言模型在整體詐騙偵測效能上顯著優於傳統機器學習方法，<span class="highlight">準確率提升 46%</span></div>
+</div>
+</div>
+<div class="conclusion-item">
+<div class="conclusion-icon"><i class="fas fa-heart"></i></div>
+<div class="conclusion-content">
+<div class="conclusion-title">情緒條件化效果顯著</div>
+<div class="conclusion-desc">加入情緒條件後，模型對隱性詐騙的辨識能力<span class="highlight">提升 16%</span>，Recall 達到 100%</div>
+</div>
+</div>
+<div class="conclusion-item">
+<div class="conclusion-icon"><i class="fas fa-layer-group"></i></div>
+<div class="conclusion-content">
+<div class="conclusion-title">LoRA 降低部署成本</div>
+<div class="conclusion-desc">透過 LoRA 微調，小型本地端模型也能達到接近大型雲端模型的效果，<span class="highlight">成本降低 90%</span></div>
+</div>
+</div>
+<div class="conclusion-item">
+<div class="conclusion-icon"><i class="fas fa-server"></i></div>
+<div class="conclusion-content">
+<div class="conclusion-title">本地端具實務可行性</div>
+<div class="conclusion-desc">本地端模型推論速度快，Emotion-LoRA 僅需 <span class="highlight">0.24秒</span>，適合即時防詐應用</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Section: Research Contributions -->
+<div class="right-section">
+<div class="section-card">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-award"></i></div>
+<div>
+<div class="card-title">研究貢獻</div>
+<div class="card-subtitle">四大學術貢獻</div>
+</div>
+</div>
+<div class="contribution-grid">
+<div class="contribution-item">
+<div class="contribution-header">
+<div class="contribution-icon"><i class="fas fa-lightbulb"></i></div>
+<div class="contribution-title">提出情緒條件化架構</div>
+</div>
+<div class="contribution-desc">創新性地將情緒訊號融入詐騙偵測模型，提升隱性詐騙辨識能力</div>
+</div>
+<div class="contribution-item">
+<div class="contribution-header">
+<div class="contribution-icon"><i class="fas fa-balance-scale"></i></div>
+<div class="contribution-title">系統性比較研究</div>
+</div>
+<div class="contribution-desc">全面比較雲端與本地端 LLM 在效能、延遲、成本等多維度表現</div>
+</div>
+<div class="contribution-item">
+<div class="contribution-header">
+<div class="contribution-icon"><i class="fas fa-chart-line"></i></div>
+<div class="contribution-title">語意與情緒分析</div>
+</div>
+<div class="contribution-desc">深入分析語意與情緒對模型行為的影響，揭示關鍵影響因素</div>
+</div>
+<div class="contribution-item">
+<div class="contribution-header">
+<div class="contribution-icon"><i class="fas fa-rocket"></i></div>
+<div class="contribution-title">部署參考設計</div>
+</div>
+<div class="contribution-desc">提供可部署的參考設計（Qwen2.5-1.5B + Emotion-LoRA）</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

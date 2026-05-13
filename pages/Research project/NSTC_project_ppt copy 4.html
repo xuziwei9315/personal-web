@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>資料集與方法 - ICIM 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url("https://www.genspark.ai/image_placeholder.png");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Noto Sans TC', sans-serif;
+            background: #0f172a;
+            color: #ffffff;
+        }
+        
+        .slide-container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px);
+            background-size: 80px 80px, 120px 120px, 100px 100px;
+        }
+        
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .title-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .title-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .title-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        
+        .title-sub {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .page-number {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .main-content {
+            position: absolute;
+            top: 105px;
+            left: 60px;
+            right: 60px;
+            bottom: 40px;
+            display: flex;
+            gap: 25px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .right-section {
+            width: 420px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .card-subtitle {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .dataset-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .info-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 2px;
+        }
+        
+        .info-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .annotation-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        
+        .field-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .field-tag i {
+            color: #3b82f6;
+            font-size: 10px;
+        }
+        
+        .metrics-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: space-between;
+        }
+        
+        .metric-item {
+            flex: 1;
+            min-width: 70px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 3px;
+        }
+        
+        .metric-label {
+            font-size: 11px;
+            color: #94a3b8;
+        }
+        
+        .method-flow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        
+        .flow-step {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 5px;
+            text-align: center;
+        }
+        
+        .flow-step-number {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 5px;
+        }
+        
+        .flow-step-text {
+            font-size: 11px;
+            color: #e2e8f0;
+            white-space: nowrap;
+        }
+        
+        .flow-arrow {
+            color: #3b82f6;
+            font-size: 14px;
+        }
+        
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .chart-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .chart-title i {
+            color: #3b82f6;
+        }
+        
+        .chart-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chart-placeholder {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-pattern"></div>
+<div class="header">
+<div class="title-section">
+<div class="title-icon"><i class="fas fa-database"></i></div>
+<div>
+<div class="title-text">資料集與方法</div>
+<div class="title-sub">354筆資料、標註欄位、研究方法流程與評估指標</div>
+</div>
+</div>
+<div class="page-number">05 / 10</div>
+</div>
+<div class="main-content">
+<!-- 左側區域 -->
+<div class="left-section">
+<!-- 資料集概況 -->
+<div class="section-card">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-server"></i></div>
+<div>
+<div class="card-title">資料集概況</div>
+<div class="card-subtitle">總計 354 筆資料，包含詐騙與非詐騙訊息</div>
+</div>
+</div>
+<div class="dataset-info">
+<div class="info-item">
+<div class="info-icon"><i class="fas fa-database"></i></div>
+<div class="info-content">
+<div class="info-label">總資料數</div>
+<div class="info-value">354筆</div>
+</div>
+</div>
+<div class="info-item">
+<div class="info-icon"><i class="fas fa-exclamation-triangle"></i></div>
+<div class="info-content">
+<div class="info-label">詐騙訊息</div>
+<div class="info-value">180筆</div>
+</div>
+</div>
+<div class="info-item">
+<div class="info-icon"><i class="fas fa-check-circle"></i></div>
+<div class="info-content">
+<div class="info-label">非詐騙訊息</div>
+<div class="info-value">174筆</div>
+</div>
+</div>
+<div class="info-item">
+<div class="info-icon"><i class="fas fa-balance-scale"></i></div>
+<div class="info-content">
+<div class="info-label">正負類比例</div>
+<div class="info-value">51:49</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 標註欄位 -->
+<div class="section-card">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-tags"></i></div>
+<div>
+<div class="card-title">標註欄位</div>
+<div class="card-subtitle">多維度標註，包含詐騙類型、語意特徵與情緒標籤</div>
+</div>
+</div>
+<div class="annotation-fields">
+<div class="field-tag"><i class="fas fa-check"></i>是否詐騙</div>
+<div class="field-tag"><i class="fas fa-comment"></i>語意類型</div>
+<div class="field-tag"><i class="fas fa-heart"></i>情緒操控</div>
+<div class="field-tag"><i class="fas fa-smile"></i>情緒類型</div>
+<div class="field-tag"><i class="fas fa-clock"></i>時間戳記</div>
+<div class="field-tag"><i class="fas fa-user"></i>發送者</div>
+</div>
+</div>
+<!-- 研究方法流程 -->
+<div class="section-card">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+<div>
+<div class="card-title">研究方法流程</div>
+<div class="card-subtitle">從資料預處理到模型評估的完整流程</div>
+</div>
+</div>
+<div class="method-flow">
+<div class="flow-step">
+<div class="flow-step-number">1</div>
+<div class="flow-step-text">資料預處理</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-step">
+<div class="flow-step-number">2</div>
+<div class="flow-step-text">特徵提取</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-step">
+<div class="flow-step-number">3</div>
+<div class="flow-step-text">模型訓練</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-step">
+<div class="flow-step-number">4</div>
+<div class="flow-step-text">模型評估</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 右側區域 -->
+<div class="right-section">
+<!-- 評估指標 -->
+<div class="section-card">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+<div>
+<div class="card-title">評估指標</div>
+<div class="card-subtitle">多維度評估模型效能</div>
+</div>
+</div>
+<div class="metrics-grid">
+<div class="metric-item">
+<div class="metric-value">94%</div>
+<div class="metric-label">Accuracy</div>
+</div>
+<div class="metric-item">
+<div class="metric-value">96%</div>
+<div class="metric-label">Recall</div>
+</div>
+<div class="metric-item">
+<div class="metric-value">95%</div>
+<div class="metric-label">F1</div>
+</div>
+<div class="metric-item">
+<div class="metric-value">92%</div>
+<div class="metric-label">AUC</div>
+</div>
+<div class="metric-item">
+<div class="metric-value">88%</div>
+<div class="metric-label">Specificity</div>
+</div>
+</div>
+</div>
+<!-- 資料分佈圖 -->
+<div class="section-card" style="flex: 1;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+<div>
+<div class="card-title">資料分佈</div>
+<div class="card-subtitle">詐騙與非詐騙訊息比例</div>
+</div>
+</div>
+<div class="chart-container">
+<div class="chart-title">
+<i class="fas fa-chart-pie"></i>
+                        資料分佈圖
+                    </div>
+<div class="chart-content">
+<div class="chart-placeholder">
+<i class="fas fa-chart-pie" style="font-size: 48px; color: #3b82f6; opacity: 0.5;"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

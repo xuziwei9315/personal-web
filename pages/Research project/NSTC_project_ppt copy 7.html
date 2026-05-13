@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>成本與推論速度比較 - ICIM 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url("https://www.genspark.ai/image_placeholder.png");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Noto Sans TC', sans-serif;
+            background: #0f172a;
+            color: #ffffff;
+        }
+        
+        .slide-container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px);
+            background-size: 80px 80px, 120px 120px, 100px 100px;
+        }
+        
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .title-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .title-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .title-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        
+        .title-sub {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .page-number {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .main-content {
+            position: absolute;
+            top: 110px;
+            left: 60px;
+            right: 60px;
+            bottom: 30px;
+            display: flex;
+            gap: 25px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .left-section {
+            flex: 1.3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .right-section {
+            flex: 0.7;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .left-section > .section-card:first-child {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .card-subtitle {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        
+        .latency-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+        
+        .latency-table th {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        
+        .latency-table td {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 8px;
+            text-align: center;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        
+        .latency-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .model-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .model-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .icon-gemini { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .icon-mistral { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        .icon-lora { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .icon-emotion { background: linear-gradient(135deg, #ec4899, #db2777); }
+        
+        .latency-value {
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        
+        .status-fast {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
+        
+        .status-medium {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+        
+        .status-slow {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .key-findings {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .finding-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .finding-icon {
+            color: #3b82f6;
+            font-size: 16px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .finding-text {
+            font-size: 14px;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .chart-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .chart-title i {
+            color: #3b82f6;
+        }
+        
+        .deployment-potential {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 12px;
+            height: 100%;
+        }
+        
+        .potential-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .potential-text {
+            flex: 1;
+        }
+        
+        .potential-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        
+        .potential-desc {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-pattern"></div>
+<div class="header">
+<div class="title-section">
+<div class="title-icon"><i class="fas fa-tachometer-alt"></i></div>
+<div>
+<div class="title-text">成本與推論速度比較</div>
+<div class="title-sub">4種模型的延遲時間與部署可行性分析</div>
+</div>
+</div>
+<div class="page-number">08 / 10</div>
+</div>
+<div class="main-content">
+<div class="left-section">
+<div class="section-card" style="flex: 1.1;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-table"></i></div>
+<div>
+<div class="card-title">模型延遲時間比較</div>
+<div class="card-subtitle">推論速度與部署成本分析</div>
+</div>
+</div>
+<table class="latency-table">
+<thead>
+<tr>
+<th style="width: 28%; text-align: left; padding-left: 20px;">模型</th>
+<th style="width: 17%;">平均延遲</th>
+<th style="width: 18%;">每秒處理</th>
+<th style="width: 18%;">成本/千次</th>
+<th style="width: 19%;">部署建議</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding-left: 20px;">
+<div class="model-name">
+<div class="model-icon icon-gemini"><i class="fas fa-brain"></i></div>
+                                    Gemini 2.5 Pro
+                                </div>
+</td>
+<td class="latency-value">10.79s</td>
+<td>0.09 req/s</td>
+<td>$2.50</td>
+<td><span class="status-badge status-slow"><i class="fas fa-exclamation-triangle"></i> 延遲高</span></td>
+</tr>
+<tr>
+<td style="padding-left: 20px;">
+<div class="model-name">
+<div class="model-icon icon-mistral"><i class="fas fa-robot"></i></div>
+                                    Mistral Large
+                                </div>
+</td>
+<td class="latency-value">2.17s</td>
+<td>0.46 req/s</td>
+<td>$1.80</td>
+<td><span class="status-badge status-medium"><i class="fas fa-circle-notch"></i> 中等</span></td>
+</tr>
+<tr>
+<td style="padding-left: 20px;">
+<div class="model-name">
+<div class="model-icon icon-lora"><i class="fas fa-layer-group"></i></div>
+                                    Qwen+LoRA
+                                </div>
+</td>
+<td class="latency-value">0.67s</td>
+<td>1.49 req/s</td>
+<td>$0.05</td>
+<td><span class="status-badge status-fast"><i class="fas fa-check"></i> 快速</span></td>
+</tr>
+<tr>
+<td style="padding-left: 20px;">
+<div class="model-name">
+<div class="model-icon icon-emotion"><i class="fas fa-heart"></i></div>
+                                    Emotion-LoRA
+                                </div>
+</td>
+<td class="latency-value" style="color: #22c55e; font-weight: 700;">0.24s</td>
+<td>4.17 req/s</td>
+<td>$0.03</td>
+<td><span class="status-badge status-fast"><i class="fas fa-check"></i> 最佳</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section-card" style="flex: 0.7;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+<div>
+<div class="card-title">重點結論</div>
+<div class="card-subtitle">部署可行性分析</div>
+</div>
+</div>
+<div class="key-findings">
+<div class="finding-item">
+<div class="finding-icon"><i class="fas fa-check-circle"></i></div>
+<div class="finding-text">
+<span class="highlight">雲端模型</span>雖然準確率高，但延遲時間長（Gemini 10.79秒），不適合即時應用
+                        </div>
+</div>
+<div class="finding-item">
+<div class="finding-icon"><i class="fas fa-bolt"></i></div>
+<div class="finding-text">
+<span class="highlight">本地端模型</span>推論速度快，Emotion-LoRA僅需0.24秒，適合即時防詐
+                        </div>
+</div>
+</div>
+</div>
+</div>
+<div class="right-section">
+<div class="section-card" style="flex: 1.1;">
+<div class="card-header">
+<div class="card-icon"><i class="fas fa-chart-line"></i></div>
+<div>
+<div class="card-title">效能對比</div>
+<div class="card-subtitle">延遲時間視覺化</div>
+</div>
+</div>
+<div class="chart-container">
+<div class="chart-title">
+<i class="fas fa-stopwatch"></i>
+                        延遲時間（秒）
+                    </div>
+<div style="display: flex; flex-direction: column; gap: 15px;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<div style="width: 80px; font-size: 13px; color: #94a3b8; font-weight: 500;">Gemini</div>
+<div style="flex: 1; height: 24px; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; position: relative;">
+<div style="width: 100%; height: 100%; background: linear-gradient(90deg, #ef4444, #dc2626);"></div>
+</div>
+<div style="width: 60px; text-align: right; font-size: 13px; color: #ef4444; font-weight: 600;">10.79s</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div style="width: 80px; font-size: 13px; color: #94a3b8; font-weight: 500;">Mistral</div>
+<div style="flex: 1; height: 24px; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden;">
+<div style="width: 20%; height: 100%; background: linear-gradient(90deg, #fbbf24, #f59e0b);"></div>
+</div>
+<div style="width: 60px; text-align: right; font-size: 13px; color: #fbbf24; font-weight: 600;">2.17s</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div style="width: 80px; font-size: 13px; color: #94a3b8; font-weight: 500;">LoRA</div>
+<div style="flex: 1; height: 24px; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden;">
+<div style="width: 8%; height: 100%; background: linear-gradient(90deg, #22c55e, #16a34a);"></div>
+</div>
+<div style="width: 60px; text-align: right; font-size: 13px; color: #22c55e; font-weight: 600;">0.67s</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div style="width: 80px; font-size: 13px; color: #94a3b8; font-weight: 500;">Emotion</div>
+<div style="flex: 1; height: 24px; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden;">
+<div style="width: 3%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
+</div>
+<div style="width: 60px; text-align: right; font-size: 13px; color: #3b82f6; font-weight: 600;">0.24s</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-card" style="flex: 0.5; padding: 0;">
+<div class="deployment-potential">
+<div class="potential-icon"><i class="fas fa-rocket"></i></div>
+<div class="potential-text">
+<div class="potential-title">Emotion-LoRA 最具部署潛力</div>
+<div class="potential-desc">兼具準確率與速度，推論成本大幅降低</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
