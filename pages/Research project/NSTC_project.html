@@ -13,538 +13,291 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
 
-				<!-- Main -->
-					<!-- Main -->
-					<div id="main">
-						<div class="inner">
+					<header id="header">
+						<a href="../../index.html" class="logo"><strong>Vivienne</strong> location</a>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/xu.zi.wai.207641" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/vivienne_0115?igsh=cnpxMjdlMTdzbG9p" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://mail.google.com/mail/?view=cm&to=vivienne.3391@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</header>
 
-							<!-- Header -->
-								<header id="header">
-									<a href="../../index.html" class="logo"><strong>Vivienne</strong> location</a>
-									<ul class="icons">
-										<li><a href="https://www.facebook.com/xu.zi.wai.207641" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.instagram.com/vivienne_0115?igsh=cnpxMjdlMTdzbG9p" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://mail.google.com/mail/?view=cm&to=vivienne.3391@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					<section class="nstc-page">
 
-									</ul>
-								</header>
-
-							<!-- Content -->
-								<section>
-                                <header class="major">
-                                    <h2>大語言模型應用於詐騙偵測之研究</h2>
-                                </header>
-                                    <div style="text-align:right;">
-                                        <a href="../../file/NSTC_project_01.pdf" class="button"><span class="icon solid fa-file">  計劃書全文下載</span></a>
-                                        <a href="../../file/NSTC_project_02.pdf" class="button"><span class="icon solid fa-file">  結案報告</span></a>
-                                        <a href="../Research project/NSTC_project_ppt_deck.html" class="button"><span class="icon solid fa-search">  PPT檢視</span></a>
-									</div>
-
-									<!-- Content -->
-										<h2 id="content">摘要</h2>
-										<p><b>研究核心： </b>針對隱性情感操控與複雜詐騙話術，開發高效且低延遲的偵測方案。</p>
-										<p><b>痛點： </b>現代詐騙擅長利用情感需求（交友、戀愛）隱藏關鍵字，傳統技術難以捕捉非結構化的語境。</p>
-										<p><b>任務：</b>延續前期開發之 「騙局雷達 (TF-IDF + One-Class SVM)」 經驗，透過 LLM 微調 (Fine-tuning) 提升偵測深度，並優化運算成本。</p>
-										<p><b>期望成效：</b>將詐騙檢測準確率提升至大於 95%，推理延遲縮短至 2 秒，在達到 以上基本效能的基礎上，開發出一套高效且低成本的檢測方案。研究成果不僅 能應對多樣化的詐騙情境，還可作為其他資訊安全場域的技術參考，提高資安 防護的實際應用。</p>
-                                        <section><br><br>
-
-                                        <div class="pro-timeline">
-
-                                            <div class="pro-timeline-item">
-                                                <div class="pro-timeline-node"></div>
-
-                                                <div class="pro-card">
-                                                <h3>Phase 1</h3>
-                                                <p>
-                                                    指標設計與模型篩選：制定準確率、召回率、推理速度等核心指標，挑選適合詐騙檢測的 LLM 進行性能比較。
-                                                </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="pro-timeline-item">
-                                                <div class="pro-timeline-node"></div>
-
-                                                <div class="pro-card">
-                                                <h3>Phase 2</h3>
-                                                <p>
-                                                    客製化模型開發：對選定的 LLM 進行微調，使其能更有效地檢測特定詐騙情境中的關鍵字與情感特徵。
-                                                </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="pro-timeline-item">
-                                                <div class="pro-timeline-node"></div>
-
-                                                <div class="pro-card">
-                                                <h3>Phase 3</h3>
-                                                <p>
-                                                    性能測試與比較分析：本階段將針對 LLM 和傳統 ML 模型進行深入的性能測試與比較。透過準確率、召回率、推理速度與資源消耗等指標，全面分析不同模型在各類詐騙場景（如情感詐騙、投資詐騙等）中的表現，驗證 LLM 是否具備在非結構化語境中識別隱性詐騙話術的能力。
-                                                </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        </section>
-
-                                    
-                                    <!-- 研究動機與研究問題
-                                    <hr class="major" />
-                                    <h2 id="content">研究動機與研究問題</h2>
-                                    <p>根據警政統計通報(2024)，112 年詐欺犯罪大約有3.8 萬件，相比於前一年增
-                                        加了8,314件，相當於增加了28.17%，其中以「投資詐欺」相較於前一年增加
-                                        了5,233 件為最多的一項。各年齡層的被害人其案件類型皆不同， 警方也依
-                                        照年齡分眾進行強化宣導，可見詐騙議題被高度重視。根據曾開源檢察官所
-                                        說，全世界一年的被詐騙金額高達 1500億新台幣，相當於台灣第三大金控一
-                                        年的營收。
-                                    </p>
-                                    <p>根據李佩嬨、顧以謙(2023)，目前誘導式詐騙的案例很多，數位化時代發展出
-                                        眾多交友APP，這些雖然方便交友，卻也容易成為愛情詐騙的管道。一些詐騙
-                                        集團有組織地以尋找長期伴侶讓被害者自願轉帳，以騙取大額財產和造成情感
-                                        上的依賴與傷害。其中隱晦的誘導式詐騙關鍵字和情緒上的恐嚇、勒索，使受
-                                        害者難以發現詐騙的真相。傳統以關鍵字匹配與固定模板為基礎的詐騙偵測系
-                                        統，面對這類變化多端的語境往往效果不佳，準確率與召回率均有待提升。 
-                                    </p>
-                                    <p>
-                                            本研究旨在提升防詐騙系統的檢測準確度，通過比較機器學習技術和大型語言
-                                            模型（LLM）來優化詐騙識別過程。目前 LLM 在詐騙檢測中的研究仍處於初
-                                            步階段，許多 LLM 主要應用於一般自然語言處理 （Natural Language 
-                                            Processing，NLP）任務，而缺乏針對隱性詐騙話術與情感操控的有效偵測。支
-                                            援向量機 SVM(support vector machine) 和人工神經網路 ANN(Artificial Neural 
-                                            Network) 是用於欺詐檢測的常用 ML 演算法(Ali，2022)，而在王厚勛(2020)
-                                            文本分類基本上透過TF-IDF  (Term Frequency–Inverse Document Frequency)，
-                                            但這些方法在應對隱性詐騙話術、情緒操控時表現不佳。本研究希望驗證 LLM 
-                                            是否能提升詐騙偵測的準確率，特別是在非結構化詐騙語境中。計畫將專注於以下三個主要研究問題： 
-                                    </p>
-                                    <p>
-                                        <ol>
-                                            <li>LLM 與 ML 在詐騙關鍵字檢測上的準確率與適應性比較 </li>
-                                                <P>本研究將比較 LLM與ML在詐騙關鍵字檢測上的準確率、召回率與適應性。重點分析 LLM 是否比傳統 ML 方法更能識別隱藏的詐騙關鍵字，以及在不同詐騙類型（如投資詐騙、情感詐騙）中的效能表現。 </li>
-                                            <li>LLM 與 ML 在詐騙話術的情感操控偵測能力比較 </li>
-                                                <p>本研究將探討詐騙話術如何利用情感操控手法（如恐懼、緊迫感、信任操控）來影響受害者，並分析 LLM 和 ML 在偵測這些語言模式的效能差異。評估 LLM 在語境理解與隱性詐騙語意分析上的優勢，並比較其與 ML的分類準確率與適應性。</P>
-                                            <li>本地 LLM 與雲端 LLM 在詐騙檢測的效能與成本比較 </li>
-                                                <p>本研究依據問題一跟問題二的結論評估是否有建置在本地端的價值。分析不同 LLM在詐騙檢測中的準確率、推理速度與運算資源需求，並比較雲端 LLM 與本地 LLM 的成本效益。透過實驗驗證不同 LLM 的效能，提供未來防詐騙系統設計的參考依據，以及提高在未來的價值和可塑性，以供企業或其他單位使用。</p>
-                                        </ol>
-                                    </p>
-                                    <br>-->
-
-                                    <!-- 文獻回顧與探討
-									<hr class="major" />
-                                    <h2>文獻回顧與探討：</h2>
-                                        <p>近年來，詐騙手法的多樣化與更深的智慧，使得傳統的詐騙檢測方法面臨挑
-                                        戰。現有的防詐騙技術主要依賴機器學習的方法，如 TF-IDF、SVM、隨機森
-                                        林（Random Forest）等，來識別詐騙關鍵字與模式。根據王厚勛(2020)發現以
-                                        DistilBERT 搭配隨機森林的分類準確率高達98.7%。然而，這些方法依賴人工
-                                        標註的特徵工程，難以適應詐騙話術的不斷變化，且對隱性詐騙字眼與情感操
-                                        控手法的辨識能力推測是有限的（陳怡文，2021）。</p>
-                                        <p>近年來，大型語言模型在自然語言處理（Natural Language Processing, NLP）領
-                                        域的發展，為詐騙檢測提供了新的可能性。Korkanti（2024）研究發現，LLM 
-                                        在分析非結構化數據方面具有顯著優勢，能夠識別語境中的異常模式，提升金
-                                        融詐騙檢測的準確率，還揭示了傳統方法所忽視的複雜欺詐計劃。根據 Li et 
-                                        al. (2024) 的研究，BERT 在詐騙文本分類的準確率為 91.3%，而 GPT-4 則
-                                        可達到 94.7%。</p>
-
-                                    <hr class="major" />
-                                    <div class="tabs">
-                                        <button class="button primary" onclick="showTab(0)">3.1 LLM 選擇與應用 </button>
-                                        <button class="button primary" onclick="showTab(1)">3.2 資源需求與本地運行 </button>
-                                        <button class="button primary" onclick="showTab(2)">3.3 LLM 微調與情緒分析的結合 </button>
-                                    </div> -->
-
-                                    <div class="tab-content text-left">
-                                        <!-- Blockquote -->
-                                        <h3>3.1 LLM 選擇與應用</h3>
-                                        <blockquote>在選擇大型語言模型進行詐騙檢測與情感分析系統設計時，通常考慮其有效性、效率和與專家工作流程的整合(Li et al.，2024)。
-                                            根據Chakraborty(2024) 發現雖然不同LLMs在個人欺詐和濫用的檢測任務中都表現良好，但他們在其他任務中的差異很大，
-                                            尤其是在努力完成需要細緻入微的語用推理的任務的時候。2024），</blockquote>
-                                        <div class="row ">
-                                            <div class="col-6 col-12-medium">
-                                                <p>根據 Han et al.（2024），目前適合涵蓋多樣化的任務與應用場景的 LLM 主要可分為三類：</p>
-                                                <div class="box">
-                                                    <ol>
-                                                        <li>通用 LLM（如 GPT-4、Claude 2）：具備強大的文本理解與生成能力，但運行成本高，推理速度較慢，適合雲端部署或 API 調用。 </li>
-                                                        <li>輕量級 LLM（如 Llama 3 8B 、GPT-3.5-turbo、LLaMA 2）：在計算資源有限的情況下，可在本地運行，能夠兼顧準確率與成本效益。</li>
-                                                        <li>專門 NLP 模型（如 BERT、RoBERTa）：特定任務以這兩種方法去嘗試微調後，能夠高效處理詐騙文本，適合部署於即時檢測系統。</li>
-                                                    </ol>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-6 col-12-medium">
-                                                <h4>挑選 LLM 的關鍵指標 </h4>
-                                                <dl>
-                                                    <dt>1. 性能 (Capacity)</dt>
-                                                    <dd>
-                                                    <p>：LLM 的性能通常由其參數量、處理能力和支持的 
-                                                        token 數量來衡量（Han et al., 2024）。較大參數量的模型通常能提供
-                                                        更高的語言理解與推理能力，適用於複雜的任務，不過要在輸出品質和
-                                                        易用性之間取得平衡，使LLMs可以接受廣泛的使用者的容易訪問。（Li 
-                                                        et al., 2024）。</p>
-                                                    </dd>
-                                                    <dt>2. 準確度 (Accuracy)</dt>
-                                                    <dd>
-                                                    <p>Yoon(2023) 在技術信用評估標準範圍內準確理解
-                                                        使用者查詢的準確性為 92%，推估我們在進行詐騙檢測和情感分析時，
-                                                        確保模型的準確度是關鍵，且須至少高於95%，才能快速、輕鬆地確定
-                                                        技術可靠性。</p>
-                                                    </dd>
-                                                    <dt>3. 推理速度與延遲 (Inference Speed and Latency)</dt>
-                                                    <dd>
-                                                    <p>研究顯示，GPT-4 推理
-                                                        速度平均需 2-5 秒，而小型 LLM（如 Llama 3 8B）可在 1-2 秒內完成
-                                                        判斷，但其準確率可能略低（Han et al., 2024）。 </p>
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-content text-left">
-                                        <h4>3.2資源需求與本地運行 </h4>
-                                        <p>在選擇 LLM 進行詐騙檢測時，應同時考量模型效能、推理速度與運行成本。
-                                            若選擇雲端 LLM（如 GPT-4、Claude 3），需評估 API 調用的成本，這通常
-                                            根據 token 使用量計價。例如，OpenAI GPT-4 Turbo 每千 tokens 約 
-                                            $0.01~$0.03 美元，而 Claude 3 則提供部分免費使用，但仍需控制請求量以
-                                            避免高昂費用。此外，雲端模型雖然提供即時推理與強大計算能力，但相比本
-                                            地端運行，雲端LLM會有 API 延遲與隱私性問題。 </p>
-
-                                            <p>若計畫後續在本地運行 LLM，則需評估硬體資源與運行效能。較小的開源模
-                                            型（如 Mistral 7B、Llama 3 8B）可以透過量化（GGUF, GPTQ） 在 RTX 
-                                            3090 / RTX 4090 上運行，降低 VRAM 需求至 8GB 以下適用於中小型應用
-                                            場景。然而，大型模型（如 Llama 3 70B）則需要 A100 或 H100 GPU，這對
-                                            於一般研究計畫而言，可能會帶來較高的設備與電力成本。 </p>
-                                            <p>因此，在選擇適合的 LLM 時，應依據效能需求、運行效率與成本進行權衡： <br>
-                                            <br>短期研究 / 快速測試：優先使用雲端 LLM API，降低前期開發成本，
-                                            確保能快速取得結果。 
-                                            <br>長期運行 / 降低成本：若計畫長期部署，應考慮本地 LLM，透過輕量
-                                            化技術減少 GPU 計算需求。 
-                                            <br>效能與應用場景考量：若系統需即時偵測詐騙訊息（如即時客服防
-                                            詐），則雲端 LLM 可能更適合；若需處理大量歷史數據，則本地 
-                                            LLM 可能更具成本效益。 
-                                            <br><br>綜合而言，雲端 LLM 提供即時性與高準確率，但長期成本較高；而本地 
-                                            LLM 雖需硬體支持，但可降低呼叫 API 成本，並提高隱私性與可控性。本研
-                                            究將根據這些因素，綜合評估不同 LLM 模型在詐騙檢測中的適用性，並進一
-                                            步分析其效能與成本效益。</p>    
-                                        
-
-                                    </div>
-                                    <div class="tab-content text-left">
-                                        <h4>3.3 LLM 微調與情緒分析的結合 </h4>
-                                            <p style="text-align: left;">中文自然語言處理中的情感分析在多個領域中起著重要的角色，但是中文的多
-                                                義性、語意的模糊性和情感表達的細微差別都讓模型在辨別詐騙時需要突破多
-                                                重困難。詐騙話術不僅涉及關鍵字識別，也包含情緒操控，如利用恐懼、緊迫
-                                                感、信任建立等策略來欺騙受害者（池晉煒，2022）。然而，傳統ML方法難以
-                                                識別這類語境特徵，需要透過引入多種注意力機制，包括全局語境、局部語
-                                                性、上下文注意力做模型優化，從而提升利用情感誘導式的詐騙。在研究者專
-                                                題中的ML模型根據Sun, Bao & Bu (2022)研究，透過 BERT + TF-IDF 結合，
-                                                可以提高中文文本分類的效果，根據文本特徵結合專有名詞的資訊及其上下文
-                                                話語對其進行分類，推測可提升詐騙語句的語意分析能力，使模型能夠更準確
-                                                地識別詐騙模式。</p>
-                                                <p style="text-align: left;">在LLM的選擇中，參考檢測詐騙與情感分析系統的資料檢索(Data Retrieval)和
-    性能需求做選擇。系統需要從資料庫或外部資料源檢索相關文本進行分析。檢
-    索的資料量會影響模型的處理時間和效率。在處理長文本或大量資料時，需要
-    將文本分塊處理（chunking），以便在處理時不會超出模型的上下文限制，同
-    時保證每個塊 (Chunk)內的語境能夠被正確理解。對於即時詐騙檢測和情感分
-    析系統，回答速度(Response Time)至關重要。如果速度過慢，可能會降低用戶
-    的滿意度，並影響實際應用中的效能，尤其是在需要即時反應的情境中。(Han 
-    et al. ，2024)</p>
-    <p style="text-align: left;">而在 LLM 微調方面，Han et al.（2024）提出，透過 LoRA（Low-Rank 
-    Adaptation）與 PEFT（Parameter Efficient Fine-Tuning）技術，可在低計算資源
-    下高效微調 LLM，推論可適用於情感分析與詐騙檢測任務。 </p>
-    <p>現有研究顯示，傳統 ML方法在關鍵字檢測方面仍具備一定優勢，尤其是在特
-    定領域的詐騙語料上具有較高準確率（陳恩齊，2019）。然而，LLM 在語境
-    理解、情感分析與隱性詐騙檢測上表現更佳，且具備更高的適應性。根據
-    (Papasavva，2024) 應用基於 AI 的模型進行在線欺詐檢測和分析，應研究構
-    建能夠捕獲新出現的欺詐模式的基於 AI 的模型。</p>
-                                    </div>
-                               
-                                 <!-- Content -->
-									<hr class="major" />
-                                    <h2>研究方法及步驟</h2>
-                                    <div class="row ">
-                                        <div class="col-6 col-12-medium">
-                                            <h4>4.1 研究方法 </h4>
-                                            <p>本研究將優先使用雲端 LLM進行測試，確保研究能在短期內獲得結果。同
-                                                時，為了降低長期運行成本，將在中期階段測試本地 LLM，並進行效能與準
-                                                確率的比較，以評估本地部署的可行性。本研究將使用實驗法，以各項指標選
-                                                擇LLM模型，深度比較透過不同方式訓練的模型，以確認效能、分析情感操
-                                                控效果最好的方法，評估實用性以利後續與其他單位合作。
-                                            </p>
-                                        </div>
-                                        <div class="col-6 col-12-medium">
-                                              <details>
-                                                <summary>4.1.2 Low-Rank Adaptation </summary>
-                                                <p>LoRA 則透過低秩矩陣分解，僅微調少量參數，可以明顯降低成本並保持原模型推理能力，適用於 GPT、LLaMA、BERT 等模型。可以避免重新訓練整個GPT/BERT，降低 GPU 計算成本和增強模型對新型詐騙的適應能力。</p>
-                                                </details>
-
-                                                <details>
-                                                <summary>4.1.3 Recall-Oriented Understudy for Gisting Evaluation ，ROUGE 指標 </summary>
-                                                <p>是一組用於自動文本摘要與自然語言生成（NLG）的評估指標，主要衡量模型生成的文本與參考答案（Ground Truth）之間的重疊程度。 </p>
-                                            </details>
-                                        </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-6 col-12-medium">
-                                            <h4>4.2 研究步驟 </h4>
-                                            <p>本研究將使用台灣警政署詐騙案例資料以及165反詐騙網站等眾多政府公開資料，並透過人工標註與 TF-IDF 篩選方法建立高品質詐騙數據集。此外，參考 Chinese SMS Spam Dataset，確保數據的多樣性。使用中文分詞工具（BertTokenizer）進行文本處理並以接近國人常用的語言模式，透過 TF-IDF 提取詐騙相關特徵。
-                                            </p>
-                                        </div>
-                                        <div class="col-6 col-12-medium">
-                                            <details>
-                                                <summary>1. 文獻調查與初步分析</summary>
-                                                <p>蒐集詐騙檢測相關文獻與技術資料，總結現有方法的優缺點，確認研究方向與目標。 </p>
-                                            </details>
-
-                                            <details>
-                                                <summary>2. 數據蒐集與預處理 </summary>
-                                                <p>建立研究所需的詐騙文本數據集，完成數據過濾與標註，並對文本進行分塊（Chunking）處理，確保適配 LLM 的上下文需求。 </p>
-                                            </details>
-
-                                            <details>
-                                                <summary>3.模型性能比較與指標設計  </summary>
-                                                <p>因為校內擁有很多資源，可以先找尋資料制定評估詐騙檢測模型的核心指標，包括準確率（Accuracy）、召回率（Recall）、推理速度（Latency）與資源消耗，作為比較 LLM 與 ML 模型效能的依據。 </p>
-                                                <p>搜尋與本機適配的LLM參數量，使用 LLM（如GPT-4、GPT-3、LLaMA 2、Mistral 7B）和現有「騙局雷達」中 ML 模型（TF-IDF 結合 One-Class SVM），進行實驗對比。測試不同模型在關鍵字檢測與情感操控字眼識別中的表現，記錄並分析結果。 </p>
-                                            </details>
-
-                                            <details>
-                                                <summary>4.搭建雲端模型(使用LLM)與微調</summary>
-                                                <p>選定適合的LLM模型，導入已處理的資料集，添加合適的promps做詐騙檢測，還有對於情緒給與適當的參考定義和分數判斷。 本研究採用 LoRA（Low-Rank Adaptation） 進行 LLM 微調，相較於全參數微調，LoRA 可減少約 80% 計算成本（Hu et al., 2023）。微調時將使用標註的詐騙文本數據，提升模型識別隱性詐騙字眼與情感操控表達的能力，並透過 ROUGE 指標 評估模型生成效果。 根據硬體資源與應用需求，選定適合的 LLM 模型進行微調，並針對詐騙特徵進行優化。本研究將參考以下技術進行微調： </p>
-                                                <ol>
-                                                    <li>加入情緒標註（包含正向、中立、負向情緒標籤）數據進行微調（Supervised Fine-tuning, SFT）。選擇 BERT-Base-Chinese，透過情感詞典與人工標註來擴充數據集，提高模型對情感操控話術的識別能力。 </li>
-                                                    <li>利用 LoRA 進行高效微調（Parameter Efficient Fine-Tuning），降低計算資源需求，同時提升模型的情感分析能力（Hu et al., 2023）。 針對詐騙話術常見的恐懼訴求、威脅性語言、同理心誘導進行標註，讓 LLM 更能區分詐騙話術與正常對話。</li>
-                                                    <li>情緒向量嵌入（Sentiment Vector Embedding），參考 Sun, Bao & Bu （2022），將情緒特徵嵌入到 LLM 的輸入向量中，讓模型在預測詐騙文本時，能夠考量語氣、語境及情緒操控策略。 </li>
-                                                </ol>
-                                            </details>
-
-                                            <details>
-                                                <summary>5.模型測試與性能比較 </summary>
-                                                <p>測試 LLM 與 ML 模型在不同數據集上的表現，記錄準確率、召回率、推理速度等指標。比較微調前後的性能差異，分析 LLM 與 ML 的效能優劣。</p>
-                                            </details>
-
-                                            <details>
-                                                <summary>6.建置本地端及考量風險 </summary>
-                                                <p>如果雲端LLM對於檢測的各項指標符合預期，將建置在本地端減少成本。若 LLM 微調效果未達標，本研究將改用預訓練 LLM + 規則篩選（如 TF-IDF 預處理）來降低模型負擔。此外，若 GPU 計算資源不足，將改用少量 API 測試，降低成本。</p>
-                                            </details>
-
-                                            <details>
-                                                <summary>7.實驗與測試 </summary>
-                                                <p>在不同數據集上測試優化後的 LLM 模型與現有 ML 模型，評估其在準確率、召回率與推理速度等指標上的表現。分析 LLM 與 ML 的資源消耗，權衡其應用於實際場景的可行性。 </p>
-                                            </details>
-
-                                            <details>
-                                                <summary>8. 撰寫報告與成果總結  </summary>
-                                                <p>整理研究過程與結果，完成結案報告，並對未來研究方向與應用場景提出建
-議。 </p>
-                                            </details>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Content -->
-									<hr class="major" />
-                                    <h2>預期結果</h2>
-                                        <div class="table-wrapper">
-														<table class="alt">
-															<thead>
-																<tr>
-																	<th>預期結果</th>
-																	<th>說明</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td>平衡效率與準確度</td>
-																	<td>透過LLM將資料集直接放入其並做微調，可以節省系統開發時間。同時以LLM原資料的豐富程度，加入適當的prompt提高準確度。</td>
-																	
-																<tr>
-																	<td>降低模型參數量</td>
-																	<td>測試出關於檢測詐騙的模型適合用多少參數量的模型，就可以得到好的效率，從而降低運行成本和保持最低延遲速度。</td>
-																	
-																</tr>
-																<tr>
-																	<td>持續關注詐騙手法、優化模型</td>
-																	<td> 現今詐騙手法不斷推陳出新，對於LLM的微調也要與時俱進，時刻關注最能夠檢測出詐騙關鍵字與隱藏的詐騙關鍵字，希望可以提供給政府或是民眾做好防禦和協助做辨識 </td>
-																	
-																</tr>
-																<tr>
-																	<td>與其他單位合作</td>
-																	<td>與企業、學校合作做預防釣魚信件或提高學生資安防範意識，政府單位可以將此技術融入更多不同系統，並與政府警政單位共同測試詐騙檢測系統，提升實務應用價值。 </td>
-																	
-																</tr>
-																<tr>
-																	<td>期望發表</td>
-																	<td>研究成果預計發表於台灣的學術研討會，讓學界可以關注研究中的實務應用，以及對於傳統檢測詐騙的方法和LLM做出的模型有更多新認知。 </td>
-																	
-																</tr>
-															</tbody>
-														</table>
-										</div>                                    
-
-                                <!-- 需要指導教授指導內容
-									<hr class="major" />
-                                    <h2>需要指導教授指導內容</h2>
-                                        <div class="table-wrapper">
-														<table class="alt">
-															<thead>
-																<tr>
-																	<th>內容</th>
-																	<th>說明</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td> 文獻探討</td>
-																	<td>對於一些文獻撰寫之內容可能研究者尚未學習到，而查閱完參考資料仍然無法理解之項目，能與教授一起討論。</td>
-																	
-																<tr>
-																	<td>提供不一樣的思路、研究的建議</td>
-																	<td>在研究過程中，對於現在技術的看法還有情緒分析的內容也可能需要教授提供他的看法。</td>
-																	
-																</tr>
-																<tr>
-																	<td>對於LLM的看法和現在學術界之看法</td>
-																	<td> 現今詐騙手法不斷推陳出新，對於LLM的微調也要與時俱進，時刻關注最能夠檢測出詐騙關鍵字與隱藏的詐騙關鍵字，希望可以提供給政府或是民眾做好防禦和協助做辨識 </td>
-																	
-																</tr>
-																<tr>
-																	<td>論文引用的相關格式</td>
-																	<td>中英論文的網站有些可能所提供APA格式內容並不完整，可以請教教授相關應有的寫法與工具以方便整理文獻。</td>
-																	
-																</tr>
-																<tr>
-																	<td>研究限制與反思</td>
-																	<td>當研究進行時所遇到的問題，將詢問教授是否可列為研究限制，並反思研究過程是否有可精進之處。</td>
-																	
-																</tr>
-                                                                <tr>
-																	<td>結案報告撰寫建議</td>
-																	<td>當研究完成之後，將詢問教授如何完成結案報告。</td>
-																	
-																</tr>
-															</tbody>
-														</table>
-										</div>     -->   
-									
-                                        <!-- Content -->
-									<hr class="major" />
-                                    <h2>參考文獻 </h2>
-                                    <details>
-                                    <p>Ali, A., Abd Razak, S., Othman, S. H., Eisa, T. A. E., Al-Dhaqm, A., Nasser, M., ... & Saif, A. (2022). Financial fraud detection based on machine learning: a systematic literature review. Applied Sciences, 12(19), 9637.</p>
-                                    <p>Chakraborty, J., Xia, W., Majumder, A., Ma, D., Chaabene, W., & Janvekar, N. 
-                                        (2024). Detoxbench: Benchmarking large language models for multitask fraud & 
-                                        abuse detection. arXiv preprint arXiv:2409.06072.</p>
-                                                                            <p>Han, T., Fang, C., Zhao, S., Ma, S., Chen, Z., & Wang, Z. (2024). Token-Budget
-                                        Aware LLM Reasoning. arXiv preprint arXiv:2412.18547. </p>
-                                                                            <p>Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., ... & Chen, W. (2021). 
-                                        Lora: Low-rank adaptation of large language models. arXiv preprint 
-                                        arXiv:2106.09685.  </p>
-                                                                            <p>Li, M., Sun, J., & Tan, X. (2024). Evaluating the effectiveness of large language 
-                                        models in abstract screening: A comparative analysis. Systematic Reviews, 13(1), 
-                                        219. </p>
-                                                                            <p>Papasavva, A., Johnson, S., Lowther, E., Lundrigan, S., Mariconti, E., Markovska, A., 
-                                        & Tuptuk, N. (2024). Application of AI-based Models for Online Fraud Detection and 
-                                        Analysis. arXiv preprint arXiv:2409.19022. </p>
-                                                                            <p>Sun, J. W., Bao, J. Q., & Bu, L. P. (2022, February). Text classification algorithm 
-                                        Based on TF-IDF and BERT. In 2022 11th International Conference of Information 
-                                        and Communication Technology (ICTech)(pp. 1-4). IEEE.</p>
-                                                                            <p>Yoon, S. (2023). Design and Implementation of an LLM system to Improve Response 
-                                        Time for SMEs Technology Credit Evaluation. International Journal of Advanced 
-                                        Smart Convergence, 12(3), 51–60. </p>
-                                                                            <p>王厚勛. (2020). 基於詐騙偵測模型與詐騙事件分類模型的反詐騙聊天機器人
-                                        之研發. ﹝碩士論文，國立中興大學﹞臺灣博碩士論文知識加值系統。
-                                        https://hdl.handle.net/11296/cxsdmw</p>
-                                                                            <p>池晉煒（2022）。竟是一場空:網路愛情詐騙被害歷程之研究。﹝碩士論文。中
-                                        央警察大學﹞臺灣博碩士論文知識加值系統。 
-                                        https://hdl.handle.net/11296/4x49tn </p>
-                                                                            <p>李佩嬨、顧以謙 (2023)司法官學院犯罪防治研究中心，111年犯罪狀況及其分
-                                        析-李佩嬨、顧以謙，愛情詐欺之犯罪模式及防制策略。
-                                        https://www.cprc.moj.gov.tw/1563/1595/1601/1603/40654/post </p>
-                                                                            <p>陳恩齊（2019）。中文斷詞方法對情感分析的影響﹝碩士論文，淡江大學﹞臺灣
-                                        博碩士論文知識加值系統。https://hdl.handle.net/11296/vvgb4b </p>
-                                                                            <p>陳怡文（2021）。詐欺型態與預防作為之分析。﹝碩士論文。輔仁大學﹞臺灣博
-                                        碩士論文知識加值系統。 https://hdl.handle.net/11296/58qkf7。</p>
-                                        <p>內政部警政署 (2024)，警政統計通報（113 年第 14 週）
-                                        https://www.npa.gov.tw/ch/app/data/doc?module=wg057&detailNo=122459946
-                                        1083222016&type=s </p>
-                                    </details>
-                                </section>
-
+						<div class="nstc-hero">
+							<div class="nstc-hero-text">
+								<span class="nstc-eyebrow">大專生研究計畫</span>
+								<h1>大語言模型應用於詐騙偵測之研究</h1>
+								<p>延續「騙局雷達」經驗，以 LLM 微調強化隱性情感操控與複雜話術的偵測，並兼顧準確率與推理速度。</p>
+								<div class="nstc-hero-actions">
+									<a href="../../file/NSTC_project_01.pdf" target="_blank" rel="noopener noreferrer" class="button nstc-hero-btn"><span class="icon solid fa-file"></span> 計劃書全文</a>
+									<a href="../../file/NSTC_project_02.pdf" target="_blank" rel="noopener noreferrer" class="button nstc-hero-btn"><span class="icon solid fa-file"></span> 結案報告</a>
+									<a href="NSTC_project_ppt_deck.html" class="button nstc-hero-btn"><span class="icon solid fa-search"></span> PPT 檢視</a>
+								</div>
+							</div>
+							<div class="nstc-hero-metrics">
+								<div class="nstc-metric">
+									<span class="nstc-metric-val">&gt;95%</span>
+									<span class="nstc-metric-label">目標準確率</span>
+								</div>
+								<div class="nstc-metric">
+									<span class="nstc-metric-val">&lt;2s</span>
+									<span class="nstc-metric-label">推理延遲</span>
+								</div>
+								<div class="nstc-metric">
+									<span class="nstc-metric-val">3</span>
+									<span class="nstc-metric-label">研究階段</span>
+								</div>
+							</div>
 						</div>
-					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									
-									<ul>
-										<li><a href="../../index.html">HOME</a></li>
-										<li><a href="../Introduction.html">ABOUT</a></li>
-										<li><a href="../Skills&Awards.html">Skills & Awards</a></li>
-										<li><a href="../Portfolio.html">Projects & Research</a></li>
-										<li><a href="../Activity/Dep_society.html">Activity</a></li>
-                                        <li><a href="../Vision.html">Vision</a></li>
-										
-									</ul>
-								</nav>
-
-							
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>聯絡方式</h2>
-									</header>
-									<p>很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">vivienne.9931@gmail.com</a></li>
-										<li class="icon solid fa-phone">0965-323-391</li>
-										<!--<li class="icon solid fa-home">(100)台北市中正區泰安街2-1號2樓</li> -->
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy;由vivienne撰寫網頁內容，請勿隨意使用。</p>
-								</footer>
-
+						<div class="nstc-section-head">
+							<h2>摘要</h2>
 						</div>
-					</div>
+						<div class="nstc-abstract-grid">
+							<article class="nstc-abstract-card">
+								<h3>研究核心</h3>
+								<p>針對隱性情感操控與複雜詐騙話術，開發高效且低延遲的偵測方案。</p>
+							</article>
+							<article class="nstc-abstract-card">
+								<h3>痛點</h3>
+								<p>現代詐騙擅長利用情感需求（交友、戀愛）隱藏關鍵字，傳統技術難以捕捉非結構化的語境。</p>
+							</article>
+							<article class="nstc-abstract-card">
+								<h3>任務</h3>
+								<p>延續「騙局雷達（TF-IDF + One-Class SVM）」，以 LLM 微調提升偵測深度並優化運算成本。</p>
+							</article>
+							<article class="nstc-abstract-card nstc-abstract-card--wide">
+								<h3>期望成效</h3>
+								<p>準確率 &gt;95%、推理延遲 &lt;2 秒，開發高效低成本的檢測方案，並作為資安領域的技術參考。</p>
+							</article>
+						</div>
 
+						<div class="nstc-section-head">
+							<h2>研究階段</h2>
+						</div>
+						<div class="nstc-phase-grid">
+							<article class="nstc-phase-card">
+								<span class="nstc-phase-num">Phase 1</span>
+								<h3>指標設計與模型篩選</h3>
+								<p>制定準確率、召回率、推理速度等核心指標，挑選適合詐騙檢測的 LLM 進行性能比較。</p>
+							</article>
+							<article class="nstc-phase-card">
+								<span class="nstc-phase-num">Phase 2</span>
+								<h3>客製化模型開發</h3>
+								<p>對選定的 LLM 進行微調，使其能更有效地檢測特定詐騙情境中的關鍵字與情感特徵。</p>
+							</article>
+							<article class="nstc-phase-card">
+								<span class="nstc-phase-num">Phase 3</span>
+								<h3>性能測試與比較分析</h3>
+								<p>比較 LLM 與傳統 ML 在準確率、召回率、速度與資源消耗上的表現，驗證 LLM 能否識別非結構化語境中的隱性詐騙話術。</p>
+							</article>
+						</div>
+
+						<div class="nstc-section-head">
+							<h2>文獻探討與方法設計</h2>
+						</div>
+
+						<article class="nstc-lit-block">
+							<div class="nstc-lit-head">
+								<span class="nstc-lit-num">3.1</span>
+								<h3>LLM 選擇與應用</h3>
+							</div>
+							<blockquote class="nstc-quote">選擇 LLM 時需兼顧有效性、效率與工作流程整合（Li et al., 2024）；不同模型在欺詐檢測表現相近，但在語用推理等任務上差異顯著（Chakraborty, 2024）。</blockquote>
+							<div class="nstc-lit-cols">
+								<div class="nstc-lit-col">
+									<p>依 Han et al.（2024），LLM 可分三類：</p>
+									<ol class="nstc-list-box">
+										<li><strong>通用 LLM</strong>（GPT-4、Claude 2）— 能力強、成本高，適合雲端 API。</li>
+										<li><strong>輕量級 LLM</strong>（Llama 3 8B、GPT-3.5）— 可本地部署，兼顧準確率與成本。</li>
+										<li><strong>專門 NLP 模型</strong>（BERT、RoBERTa）— 微調後適合即時詐騙文本檢測。</li>
+									</ol>
+								</div>
+								<div class="nstc-lit-col">
+									<h4>挑選關鍵指標</h4>
+									<dl class="nstc-dl">
+										<dt>性能</dt>
+										<dd>參數量、token 上限與推理能力決定複雜任務的處理上限（Han et al., 2024）。</dd>
+										<dt>準確度</dt>
+										<dd>詐騙檢測目標準確率須 &gt;95%，以確保實務可靠性（Yoon, 2023）。</dd>
+										<dt>推理速度</dt>
+										<dd>GPT-4 約 2–5 秒；Llama 3 8B 約 1–2 秒，但準確率可能略低（Han et al., 2024）。</dd>
+									</dl>
+								</div>
+							</div>
+						</article>
+
+						<article class="nstc-lit-block">
+							<div class="nstc-lit-head">
+								<span class="nstc-lit-num">3.2</span>
+								<h3>資源需求與本地運行</h3>
+							</div>
+							<div class="nstc-prose">
+								<p>雲端 LLM（GPT-4、Claude 3）依 token 計價，適合快速驗證但長期成本與隱私需考量；本地模型（Mistral 7B、Llama 3 8B）經量化可在消費級 GPU 運行，大型模型則需 A100 / H100。</p>
+							</div>
+							<ul class="nstc-scenario-list">
+								<li><strong>短期測試</strong>優先雲端 API，快速取得結果。</li>
+								<li><strong>長期部署</strong>評估本地 LLM 與輕量化技術，降低 API 成本。</li>
+								<li><strong>即時 vs 批次</strong>即時防詐偏雲端；大量歷史資料分析偏本地。</li>
+							</ul>
+						</article>
+
+						<article class="nstc-lit-block">
+							<div class="nstc-lit-head">
+								<span class="nstc-lit-num">3.3</span>
+								<h3>LLM 微調與情緒分析的結合</h3>
+							</div>
+							<div class="nstc-prose">
+								<p>詐騙話術常結合情緒操控（恐懼、緊迫、信任誘導），傳統 ML 難以捕捉語境特徵；BERT + TF-IDF 可強化中文文本分類（Sun, Bao &amp; Bu, 2022）。處理長文本需 chunking，即時系統則重視回應速度（Han et al., 2024）。</p>
+								<p>微調採 LoRA / PEFT 降低計算成本（Han et al., 2024）。ML 在領域關鍵字上仍有優勢，LLM 則在語境理解與隱性詐騙檢測上更具適應性（陳恩齊, 2019; Papasavva, 2024）。</p>
+							</div>
+						</article>
+
+						<div class="nstc-section-head">
+							<h2>研究方法及步驟</h2>
+						</div>
+
+						<div class="nstc-method-top">
+							<article class="nstc-method-card">
+								<h3>4.1 研究方法</h3>
+								<p>優先以雲端 LLM 快速驗證，中期評估本地部署；以實驗法比較不同訓練方式，找出情感操控偵測的最佳方案。</p>
+							</article>
+							<div class="nstc-method-aside">
+								<details class="nstc-details">
+									<summary>4.1.2 Low-Rank Adaptation</summary>
+									<p>以低秩分解微調少量參數，降低成本並保持推理能力，適用於 GPT、LLaMA、BERT。</p>
+								</details>
+								<details class="nstc-details">
+									<summary>4.1.3 ROUGE 指標</summary>
+									<p>衡量生成文本與參考答案的重疊程度，用於評估 NLG 與摘要品質。</p>
+								</details>
+							</div>
+						</div>
+
+						<article class="nstc-method-card nstc-method-card--steps">
+							<h3>4.2 研究步驟</h3>
+							<p class="nstc-steps-intro">資料來源含警政署詐騙案例、165 反詐網站與 Chinese SMS Spam Dataset；以人工標註、TF-IDF 與 BertTokenizer 建立並預處理詐騙語料。</p>
+							<div class="nstc-steps-list">
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">01</span>文獻調查與初步分析</summary>
+									<p>蒐集詐騙檢測相關文獻與技術資料，總結現有方法的優缺點，確認研究方向與目標。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">02</span>數據蒐集與預處理</summary>
+									<p>建立研究所需的詐騙文本數據集，完成數據過濾與標註，並對文本進行分塊（Chunking）處理，確保適配 LLM 的上下文需求。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">03</span>模型性能比較與指標設計</summary>
+									<p>制定準確率、召回率、延遲與資源消耗等指標；比較 GPT-4、LLaMA 2、Mistral 7B 與「騙局雷達」ML 模型（TF-IDF + One-Class SVM）在關鍵字與情感操控偵測上的表現。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">04</span>搭建雲端模型與微調</summary>
+									<p>導入資料集並設計 prompts，以 LoRA 微調（約省 80% 計算成本），搭配 ROUGE 評估。微調策略包含：情緒標註 SFT（BERT-Base-Chinese）、LoRA 高效微調、情緒向量嵌入（Sun, Bao &amp; Bu, 2022）。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">05</span>模型測試與性能比較</summary>
+									<p>測試 LLM 與 ML 模型在不同數據集上的表現，記錄準確率、召回率、推理速度等指標。比較微調前後的性能差異，分析 LLM 與 ML 的效能優劣。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">06</span>建置本地端及考量風險</summary>
+									<p>指標達標則評估本地部署；未達標則改為預訓練 LLM + TF-IDF 規則篩選，或縮減 API 測試規模。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">07</span>實驗與測試</summary>
+									<p>在不同數據集上測試優化後的 LLM 模型與現有 ML 模型，評估其在準確率、召回率與推理速度等指標上的表現。分析 LLM 與 ML 的資源消耗，權衡其應用於實際場景的可行性。</p>
+								</details>
+								<details class="nstc-details nstc-details--step">
+									<summary><span class="nstc-step-num">08</span>撰寫報告與成果總結</summary>
+									<p>整理研究過程與結果，完成結案報告，並對未來研究方向與應用場景提出建議。</p>
+								</details>
+							</div>
+						</article>
+
+						<div class="nstc-section-head">
+							<h2>預期結果</h2>
+						</div>
+						<div class="nstc-outcome-grid">
+							<article class="nstc-outcome-card">
+								<h3>平衡效率與準確度</h3>
+								<p>以 LLM 微調縮短開發時間，並透過 prompt 設計提升準確率。</p>
+							</article>
+							<article class="nstc-outcome-card">
+								<h3>降低模型參數量</h3>
+								<p>找出效能與參數量的最佳平衡，降低運行成本並維持低延遲。</p>
+							</article>
+							<article class="nstc-outcome-card">
+								<h3>持續優化模型</h3>
+								<p>隨詐騙手法演進持續微調，協助政府與民眾強化防詐辨識。</p>
+							</article>
+							<article class="nstc-outcome-card">
+								<h3>與其他單位合作</h3>
+								<p>與企業、學校及警政單位合作，將技術融入防釣魚與資安教育場景。</p>
+							</article>
+							<article class="nstc-outcome-card nstc-outcome-card--accent">
+								<h3>期望發表</h3>
+								<p>成果預計發表於台灣學術研討會，分享 LLM 與傳統 ML 在詐騙偵測上的實務應用。</p>
+							</article>
+						</div>
+
+						<div class="nstc-section-head">
+							<h2>參考文獻</h2>
+						</div>
+						<details class="nstc-refs">
+							<summary>展開參考文獻清單</summary>
+							<div class="nstc-refs-body">
+								<p>Ali et al. (2022); Chakraborty et al. (2024); Han et al. (2024); Hu et al. (2021); Li et al. (2024); Papasavva et al. (2024); Sun, Bao &amp; Bu (2022); Yoon (2023)</p>
+								<p>王厚勛 (2020)；池晉煒 (2022)；李佩嬨、顧以謙 (2023)；陳恩齊 (2019)；陳怡文 (2021)；內政部警政署 (2024)</p>
+								<p class="nstc-refs-note">完整書目請見計劃書全文 PDF。</p>
+							</div>
+						</details>
+
+					</section>
+
+				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="../../assets/js/jquery.min.js"></script>
-			<script src="../../assets/js/browser.min.js"></script>
-			<script src="../../assets/js/breakpoints.min.js"></script>
-			<script src="../../assets/js/util.js"></script>
-			<script src="../../assets/js/main.js"></script>
-			<script src="../../assets/js/new.js"></script>
-            <script>
-                let index = 0;
-                    const slides = document.querySelectorAll('.carousel-item');
+			<div id="sidebar">
+				<div class="inner">
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="../../index.html">HOME</a></li>
+							<li><a href="../Introduction.html">ABOUT</a></li>
+							<li><a href="../Skills&Awards.html">Skills & Awards</a></li>
+							<li><a href="../Portfolio.html">Projects & Research</a></li>
+							<li><a href="../Activity/Dep_society.html">Activity</a></li>
+							<li><a href="../Vision.html">Vision</a></li>
+						</ul>
+					</nav>
+					<section>
+						<header class="major">
+							<h2>聯絡方式</h2>
+						</header>
+						<p>很感謝您願意花費寶貴時間瀏覽我的網站，旨在讓您更全面地了解我的背景、專業技能與經歷。我對未來充滿熱情與學習的動力，誠摯期待有機會與您面對面交流。</p>
+						<ul class="contact">
+							<li class="icon solid fa-envelope"><a href="#">vivienne.9931@gmail.com</a></li>
+							<li class="icon solid fa-phone">0965-323-391</li>
+						</ul>
+					</section>
+					<footer id="footer">
+						<p class="copyright">&copy;由vivienne撰寫網頁內容，請勿隨意使用。</p>
+					</footer>
+				</div>
+			</div>
 
-                    function showSlide(i) {
-                    index = (i + slides.length) % slides.length;
-                    document.querySelector('.carousel-inner').style.transform = `translateX(-${index * 100}%)`;
-                    }
+		</div>
 
-                    function moveSlide(step) {
-                    showSlide(index + step);
-                    }
-
-                    // 自動播放
-                    setInterval(() => {
-                    moveSlide(1);
-                    }, 3000); // 每 3 秒切換
-
-            </script>
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/browser.min.js"></script>
+		<script src="../../assets/js/breakpoints.min.js"></script>
+		<script src="../../assets/js/util.js"></script>
+		<script src="../../assets/js/main.js"></script>
+		<script src="../../assets/js/new.js"></script>
 	</body>
 </html>
