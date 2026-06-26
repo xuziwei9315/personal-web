@@ -3758,61 +3758,64 @@ input[type="radio"] + label:before {
         .nstc-page .nstc-conclusion-body strong {
           color: var(--nstc-accent);
         }
-        .nstc-page .nstc-contrib-track {
+        .nstc-page .nstc-contrib-block {
+          margin-bottom: 2.75em;
+        }
+        .nstc-page .nstc-contrib-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1em;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        .nstc-page .nstc-contrib-grid li {
           display: flex;
           flex-direction: column;
-          gap: 0;
-          margin: 0 0 1.75em;
-          padding: 0 0 0 2em;
-          list-style: none;
-          border-left: 3px solid var(--nstc-accent-soft);
-        }
-        .nstc-page .nstc-contrib-track li {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          gap: 1.15em;
-          align-items: start;
-          padding: 1.1em 0 1.1em 1.5em;
-          position: relative;
+          gap: 0.55em;
+          padding: 1.15em 1.2em;
+          background: #fff;
+          border-radius: var(--nstc-radius);
+          border: 1px solid rgba(210, 215, 217, 0.75);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
           animation: nstc-impact-in 0.5s ease both;
         }
-        .nstc-page .nstc-contrib-track li:nth-child(1) { animation-delay: 0.3s; }
-        .nstc-page .nstc-contrib-track li:nth-child(2) { animation-delay: 0.35s; }
-        .nstc-page .nstc-contrib-track li:nth-child(3) { animation-delay: 0.4s; }
-        .nstc-page .nstc-contrib-track li:nth-child(4) { animation-delay: 0.45s; }
-        .nstc-page .nstc-contrib-track li::before {
-          content: "";
-          position: absolute;
-          left: -2.35em;
-          top: 1.65em;
-          width: 11px;
-          height: 11px;
-          background: var(--nstc-accent);
-          border-radius: 50%;
-          box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--nstc-accent-soft);
+        .nstc-page .nstc-contrib-grid li:nth-child(1) { animation-delay: 0.3s; }
+        .nstc-page .nstc-contrib-grid li:nth-child(2) { animation-delay: 0.35s; }
+        .nstc-page .nstc-contrib-grid li:nth-child(3) { animation-delay: 0.4s; }
+        .nstc-page .nstc-contrib-grid li:nth-child(4) { animation-delay: 0.45s; }
+        .nstc-page .nstc-contrib-grid li:hover {
+          transform: translateY(-3px);
+          border-color: rgba(139, 107, 177, 0.35);
+          box-shadow: 0 8px 20px rgba(139, 107, 177, 0.1);
         }
         .nstc-page .nstc-contrib-icon {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 2.5em;
-          height: 2.5em;
-          border-radius: 0.65em;
+          width: 2.25em;
+          height: 2.25em;
+          border-radius: 0.6em;
           background: linear-gradient(135deg, var(--nstc-accent), #a88bc4);
           color: #fff;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
         }
-        .nstc-page .nstc-contrib-track strong {
+        .nstc-page .nstc-contrib-grid strong {
           display: block;
-          margin-bottom: 0.2em;
-          font-size: 0.9em;
+          font-size: 0.88em;
           color: var(--nstc-text);
+          line-height: 1.35;
         }
-        .nstc-page .nstc-contrib-track p {
+        .nstc-page .nstc-contrib-grid p {
           margin: 0;
-          font-size: 0.82rem;
+          font-size: 0.8rem;
           line-height: 1.6;
           color: var(--nstc-muted);
+        }
+        .nstc-page .nstc-recognition-block {
+          padding-top: 1.25em;
+          margin-top: 0.5em;
+          border-top: 1px solid rgba(210, 215, 217, 0.6);
         }
         .nstc-page .nstc-conference-banner p {
           margin: 0;
@@ -3951,11 +3954,8 @@ input[type="radio"] + label:before {
           .nstc-page .nstc-conclusion-card--wide {
             grid-column: 1 / -1;
           }
-          .nstc-page .nstc-contrib-track {
-            padding-left: 1.5em;
-          }
-          .nstc-page .nstc-contrib-track li::before {
-            left: -1.85em;
+          .nstc-page .nstc-contrib-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
           .nstc-page .nstc-recognition {
             grid-template-columns: 1fr;
@@ -3970,17 +3970,21 @@ input[type="radio"] + label:before {
           .nstc-page .nstc-hero-metrics {
             flex-direction: column;
           }
+          .nstc-page .nstc-contrib-grid {
+            grid-template-columns: 1fr;
+          }
         }
         @media (prefers-reduced-motion: reduce) {
           .nstc-page .nstc-phase-card:hover,
           .nstc-page .nstc-impact-item:hover,
           .nstc-page .nstc-conclusion-card:hover,
+          .nstc-page .nstc-contrib-grid li:hover,
           .nstc-page .nstc-recognition-card:hover {
             transform: none;
           }
           .nstc-page .nstc-impact-item,
           .nstc-page .nstc-conclusion-card,
-          .nstc-page .nstc-contrib-track li,
+          .nstc-page .nstc-contrib-grid li,
           .nstc-page .nstc-recognition-card {
             animation: none;
           }
