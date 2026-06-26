@@ -30,217 +30,407 @@
 
 						<div class="nstc-hero">
 							<div class="nstc-hero-text">
-								<span class="nstc-eyebrow">大專生研究計畫</span>
-								<h1>大語言模型應用於詐騙偵測之研究</h1>
-								<p>延續「騙局雷達」經驗，以 LLM 微調強化隱性情感操控與複雜話術的偵測，並兼顧準確率與推理速度。</p>
+								<span class="nstc-eyebrow">大專生研究計畫 · 已結案</span>
+								<h1>大型語言模型應用在詐騙偵測之研究</h1>
+								<p>探討 LLM 在語意理解與情緒操控辨識上的應用效果；系統性比較 6 種模型，並提出可本地部署的 Emotion-LoRA 架構。</p>
+								<p class="nstc-hero-meta">研究者：徐子崴</p>
+								<ul class="nstc-hero-awards" aria-label="發表與獎項">
+									<li><span class="icon solid fa-microphone"></span> ICIM 2026</li>
+									<li><span class="icon solid fa-microphone"></span> IMP 2025</li>
+									<li><span class="icon solid fa-award"></span> 管理學院學術獎章</li>
+								</ul>
 								<div class="nstc-hero-actions">
 									<a href="../../file/NSTC_project_01.pdf" target="_blank" rel="noopener noreferrer" class="button nstc-hero-btn"><span class="icon solid fa-file"></span> 計劃書全文</a>
 									<a href="../../file/NSTC_project_02.pdf" target="_blank" rel="noopener noreferrer" class="button nstc-hero-btn"><span class="icon solid fa-file"></span> 結案報告</a>
-									<a href="NSTC_project_ppt_deck.html" class="button nstc-hero-btn"><span class="icon solid fa-search"></span> PPT 檢視</a>
+									<a href="NSTC_project_ppt_deck.html" class="button nstc-hero-btn"><span class="icon solid fa-search"></span> 簡報檢視</a>
 								</div>
 							</div>
 							<div class="nstc-hero-metrics">
 								<div class="nstc-metric">
-									<span class="nstc-metric-val">&gt;95%</span>
-									<span class="nstc-metric-label">目標準確率</span>
+									<span class="nstc-metric-val">94%</span>
+									<span class="nstc-metric-label">最佳準確率</span>
 								</div>
 								<div class="nstc-metric">
-									<span class="nstc-metric-val">&lt;2s</span>
-									<span class="nstc-metric-label">推理延遲</span>
+									<span class="nstc-metric-val">100%</span>
+									<span class="nstc-metric-label">召回率</span>
 								</div>
 								<div class="nstc-metric">
-									<span class="nstc-metric-val">3</span>
-									<span class="nstc-metric-label">研究階段</span>
+									<span class="nstc-metric-val">0.24s</span>
+									<span class="nstc-metric-label">本地推論</span>
+								</div>
+								<div class="nstc-metric">
+									<span class="nstc-metric-val">+46%</span>
+									<span class="nstc-metric-label">優於傳統 ML</span>
 								</div>
 							</div>
 						</div>
 
 						<div class="nstc-section-head">
-							<h2>摘要</h2>
+							<h2>研究摘要</h2>
 						</div>
-						<div class="nstc-abstract-grid">
-							<article class="nstc-abstract-card">
-								<h3>研究核心</h3>
-								<p>針對隱性情感操控與複雜詐騙話術，開發高效且低延遲的偵測方案。</p>
-							</article>
-							<article class="nstc-abstract-card">
-								<h3>痛點</h3>
-								<p>現代詐騙擅長利用情感需求（交友、戀愛）隱藏關鍵字，傳統技術難以捕捉非結構化的語境。</p>
-							</article>
-							<article class="nstc-abstract-card">
-								<h3>任務</h3>
-								<p>延續「騙局雷達（TF-IDF + One-Class SVM）」，以 LLM 微調提升偵測深度並優化運算成本。</p>
-							</article>
-							<article class="nstc-abstract-card nstc-abstract-card--wide">
-								<h3>期望成效</h3>
-								<p>準確率 &gt;95%、推理延遲 &lt;2 秒，開發高效低成本的檢測方案，並作為資安領域的技術參考。</p>
-							</article>
-						</div>
-
-						<div class="nstc-section-head">
-							<h2>研究階段</h2>
-						</div>
-						<div class="nstc-phase-grid">
-							<article class="nstc-phase-card">
-								<span class="nstc-phase-num">Phase 1</span>
-								<h3>指標設計與模型篩選</h3>
-								<p>制定準確率、召回率、推理速度等核心指標，挑選適合詐騙檢測的 LLM 進行性能比較。</p>
-							</article>
-							<article class="nstc-phase-card">
-								<span class="nstc-phase-num">Phase 2</span>
-								<h3>客製化模型開發</h3>
-								<p>對選定的 LLM 進行微調，使其能更有效地檢測特定詐騙情境中的關鍵字與情感特徵。</p>
-							</article>
-							<article class="nstc-phase-card">
-								<span class="nstc-phase-num">Phase 3</span>
-								<h3>性能測試與比較分析</h3>
-								<p>比較 LLM 與傳統 ML 在準確率、召回率、速度與資源消耗上的表現，驗證 LLM 能否識別非結構化語境中的隱性詐騙話術。</p>
-							</article>
-						</div>
-
-						<div class="nstc-section-head">
-							<h2>文獻探討與方法設計</h2>
-						</div>
-
-						<article class="nstc-lit-block">
-							<div class="nstc-lit-head">
-								<span class="nstc-lit-num">3.1</span>
-								<h3>LLM 選擇與應用</h3>
-							</div>
-							<blockquote class="nstc-quote">選擇 LLM 時需兼顧有效性、效率與工作流程整合（Li et al., 2024）；不同模型在欺詐檢測表現相近，但在語用推理等任務上差異顯著（Chakraborty, 2024）。</blockquote>
-							<div class="nstc-lit-cols">
-								<div class="nstc-lit-col">
-									<p>依 Han et al.（2024），LLM 可分三類：</p>
-									<ol class="nstc-list-box">
-										<li><strong>通用 LLM</strong>（GPT-4、Claude 2）— 能力強、成本高，適合雲端 API。</li>
-										<li><strong>輕量級 LLM</strong>（Llama 3 8B、GPT-3.5）— 可本地部署，兼顧準確率與成本。</li>
-										<li><strong>專門 NLP 模型</strong>（BERT、RoBERTa）— 微調後適合即時詐騙文本檢測。</li>
-									</ol>
-								</div>
-								<div class="nstc-lit-col">
-									<h4>挑選關鍵指標</h4>
-									<dl class="nstc-dl">
-										<dt>性能</dt>
-										<dd>參數量、token 上限與推理能力決定複雜任務的處理上限（Han et al., 2024）。</dd>
-										<dt>準確度</dt>
-										<dd>詐騙檢測目標準確率須 &gt;95%，以確保實務可靠性（Yoon, 2023）。</dd>
-										<dt>推理速度</dt>
-										<dd>GPT-4 約 2–5 秒；Llama 3 8B 約 1–2 秒，但準確率可能略低（Han et al., 2024）。</dd>
-									</dl>
-								</div>
-							</div>
-						</article>
-
-						<article class="nstc-lit-block">
-							<div class="nstc-lit-head">
-								<span class="nstc-lit-num">3.2</span>
-								<h3>資源需求與本地運行</h3>
-							</div>
-							<div class="nstc-prose">
-								<p>雲端 LLM（GPT-4、Claude 3）依 token 計價，適合快速驗證但長期成本與隱私需考量；本地模型（Mistral 7B、Llama 3 8B）經量化可在消費級 GPU 運行，大型模型則需 A100 / H100。</p>
-							</div>
-							<ul class="nstc-scenario-list">
-								<li><strong>短期測試</strong>優先雲端 API，快速取得結果。</li>
-								<li><strong>長期部署</strong>評估本地 LLM 與輕量化技術，降低 API 成本。</li>
-								<li><strong>即時 vs 批次</strong>即時防詐偏雲端；大量歷史資料分析偏本地。</li>
+						<div class="nstc-abstract">
+							<p class="nstc-abstract-lead">本研究針對台灣日益嚴重的詐騙問題，特別是投資、交友與情緒操控型話術，比較傳統機器學習與大型語言模型在詐騙偵測上的效能差異。實驗顯示，以 TF-IDF + Logistic Regression 為基線的傳統方法準確率僅 48%，幾乎將多數訊息誤判為詐騙；而 Gemini 2.5 Pro 與自研的 Emotion-LoRA 均可達 94% 準確率與 100% 召回率。</p>
+							<ul class="nstc-abstract-metrics" aria-label="核心成果">
+								<li><strong>354 筆</strong> 標註語料</li>
+								<li><strong>6 種</strong> 模型對照</li>
+								<li><strong>Emotion-LoRA</strong> 情緒條件化微調</li>
+								<li><strong>0.24 秒</strong> 即時推論</li>
+								<li><strong>學術獎章</strong> 管理學院</li>
 							</ul>
-						</article>
-
-						<article class="nstc-lit-block">
-							<div class="nstc-lit-head">
-								<span class="nstc-lit-num">3.3</span>
-								<h3>LLM 微調與情緒分析的結合</h3>
-							</div>
-							<div class="nstc-prose">
-								<p>詐騙話術常結合情緒操控（恐懼、緊迫、信任誘導），傳統 ML 難以捕捉語境特徵；BERT + TF-IDF 可強化中文文本分類（Sun, Bao &amp; Bu, 2022）。處理長文本需 chunking，即時系統則重視回應速度（Han et al., 2024）。</p>
-								<p>微調採 LoRA / PEFT 降低計算成本（Han et al., 2024）。ML 在領域關鍵字上仍有優勢，LLM 則在語境理解與隱性詐騙檢測上更具適應性（陳恩齊, 2019; Papasavva, 2024）。</p>
-							</div>
-						</article>
+						</div>
 
 						<div class="nstc-section-head">
-							<h2>研究方法及步驟</h2>
+							<h2>研究背景與動機</h2>
 						</div>
-
-						<div class="nstc-method-top">
-							<article class="nstc-method-card">
-								<h3>4.1 研究方法</h3>
-								<p>優先以雲端 LLM 快速驗證，中期評估本地部署；以實驗法比較不同訓練方式，找出情感操控偵測的最佳方案。</p>
+						<div class="nstc-bg-grid">
+							<article class="nstc-bg-card">
+								<h3>詐騙現況</h3>
+								<ul>
+									<li>2024 年詐騙案件較前一年增加 <strong>15%</strong></li>
+									<li>投資詐騙佔整體案件 <strong>35%</strong></li>
+									<li>交友詐騙 <strong>28%</strong>、假冒身分 <strong>22%</strong></li>
+								</ul>
 							</article>
-							<div class="nstc-method-aside">
-								<details class="nstc-details">
-									<summary>4.1.2 Low-Rank Adaptation</summary>
-									<p>以低秩分解微調少量參數，降低成本並保持推理能力，適用於 GPT、LLaMA、BERT。</p>
-								</details>
-								<details class="nstc-details">
-									<summary>4.1.3 ROUGE 指標</summary>
-									<p>衡量生成文本與參考答案的重疊程度，用於評估 NLG 與摘要品質。</p>
-								</details>
-							</div>
+							<article class="nstc-bg-card">
+								<h3>傳統方法侷限</h3>
+								<ul>
+									<li>關鍵字比對準確率僅 <strong>48%</strong></li>
+									<li>情緒操控型詐騙辨識率 <strong>32%</strong></li>
+									<li>難以應對無明顯關鍵字的隱性話術</li>
+								</ul>
+							</article>
+							<article class="nstc-bg-card nstc-bg-card--wide">
+								<h3>研究動機</h3>
+								<p>延續「騙局雷達」對詐騙關鍵字的探索，進一步驗證 LLM 是否能在語意理解與情緒維度上補足傳統 ML 的不足，並評估雲端 API 與本地端 LoRA 模型在準確率、延遲與成本上的實務可行性。</p>
+							</article>
 						</div>
-
-						<article class="nstc-method-card nstc-method-card--steps">
-							<h3>4.2 研究步驟</h3>
-							<p class="nstc-steps-intro">資料來源含警政署詐騙案例、165 反詐網站與 Chinese SMS Spam Dataset；以人工標註、TF-IDF 與 BertTokenizer 建立並預處理詐騙語料。</p>
-							<div class="nstc-steps-list">
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">01</span>文獻調查與初步分析</summary>
-									<p>蒐集詐騙檢測相關文獻與技術資料，總結現有方法的優缺點，確認研究方向與目標。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">02</span>數據蒐集與預處理</summary>
-									<p>建立研究所需的詐騙文本數據集，完成數據過濾與標註，並對文本進行分塊（Chunking）處理，確保適配 LLM 的上下文需求。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">03</span>模型性能比較與指標設計</summary>
-									<p>制定準確率、召回率、延遲與資源消耗等指標；比較 GPT-4、LLaMA 2、Mistral 7B 與「騙局雷達」ML 模型（TF-IDF + One-Class SVM）在關鍵字與情感操控偵測上的表現。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">04</span>搭建雲端模型與微調</summary>
-									<p>導入資料集並設計 prompts，以 LoRA 微調（約省 80% 計算成本），搭配 ROUGE 評估。微調策略包含：情緒標註 SFT（BERT-Base-Chinese）、LoRA 高效微調、情緒向量嵌入（Sun, Bao &amp; Bu, 2022）。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">05</span>模型測試與性能比較</summary>
-									<p>測試 LLM 與 ML 模型在不同數據集上的表現，記錄準確率、召回率、推理速度等指標。比較微調前後的性能差異，分析 LLM 與 ML 的效能優劣。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">06</span>建置本地端及考量風險</summary>
-									<p>指標達標則評估本地部署；未達標則改為預訓練 LLM + TF-IDF 規則篩選，或縮減 API 測試規模。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">07</span>實驗與測試</summary>
-									<p>在不同數據集上測試優化後的 LLM 模型與現有 ML 模型，評估其在準確率、召回率與推理速度等指標上的表現。分析 LLM 與 ML 的資源消耗，權衡其應用於實際場景的可行性。</p>
-								</details>
-								<details class="nstc-details nstc-details--step">
-									<summary><span class="nstc-step-num">08</span>撰寫報告與成果總結</summary>
-									<p>整理研究過程與結果，完成結案報告，並對未來研究方向與應用場景提出建議。</p>
-								</details>
-							</div>
-						</article>
 
 						<div class="nstc-section-head">
-							<h2>預期結果</h2>
+							<h2>研究問題與發現</h2>
 						</div>
-						<div class="nstc-outcome-grid">
-							<article class="nstc-outcome-card">
-								<h3>平衡效率與準確度</h3>
-								<p>以 LLM 微調縮短開發時間，並透過 prompt 設計提升準確率。</p>
+						<div class="nstc-rq-grid">
+							<article class="nstc-rq-card">
+								<span class="nstc-rq-label">RQ1</span>
+								<h3>LLM 是否優於傳統 ML？</h3>
+								<p>比較準確率、召回率與 F1-score。Gemini 2.5 Pro 與 Emotion-LoRA 表現最佳，準確率 94%、召回率 100%。</p>
 							</article>
-							<article class="nstc-outcome-card">
-								<h3>降低模型參數量</h3>
-								<p>找出效能與參數量的最佳平衡，降低運行成本並維持低延遲。</p>
+							<article class="nstc-rq-card">
+								<span class="nstc-rq-label">RQ2</span>
+								<h3>能否辨識隱性詐騙？</h3>
+								<p>關鍵字型詐騙辨識率 95%；隱性語境詐騙僅 72%。Emotion-LoRA 語境理解達 94%，情緒操控型辨識提升至 88%。</p>
 							</article>
-							<article class="nstc-outcome-card">
-								<h3>持續優化模型</h3>
-								<p>隨詐騙手法演進持續微調，協助政府與民眾強化防詐辨識。</p>
+							<article class="nstc-rq-card">
+								<span class="nstc-rq-label">RQ3</span>
+								<h3>本地端 LoRA 是否可行？</h3>
+								<p>Qwen2.5-1.5B + LoRA 準確率 89%；Emotion-LoRA 推論僅 0.24 秒，具即時防詐部署潛力。</p>
 							</article>
-							<article class="nstc-outcome-card">
-								<h3>與其他單位合作</h3>
-								<p>與企業、學校及警政單位合作，將技術融入防釣魚與資安教育場景。</p>
+							<article class="nstc-rq-card">
+								<span class="nstc-rq-label">RQ4</span>
+								<h3>情緒條件是否有效？</h3>
+								<p>分析 greed、urgency、fear、trust 四類情緒操控。加入情緒條件後，隱性詐騙辨識提升 16%，整體辨識率提升 22%。</p>
 							</article>
-							<article class="nstc-outcome-card nstc-outcome-card--accent">
-								<h3>期望發表</h3>
-								<p>成果預計發表於台灣學術研討會，分享 LLM 與傳統 ML 在詐騙偵測上的實務應用。</p>
-							</article>
+						</div>
+
+						<div class="nstc-section-head">
+							<h2>資料集與研究方法</h2>
+						</div>
+						<div class="nstc-data-wrap">
+							<div class="nstc-data-stats">
+								<div class="nstc-data-stat">
+									<span class="nstc-data-val">354</span>
+									<span class="nstc-data-label">總筆數</span>
+								</div>
+								<div class="nstc-data-stat">
+									<span class="nstc-data-val">180</span>
+									<span class="nstc-data-label">詐騙訊息</span>
+								</div>
+								<div class="nstc-data-stat">
+									<span class="nstc-data-val">174</span>
+									<span class="nstc-data-label">非詐騙訊息</span>
+								</div>
+								<div class="nstc-data-stat">
+									<span class="nstc-data-val">51:49</span>
+									<span class="nstc-data-label">正負類比例</span>
+								</div>
+							</div>
+							<div class="nstc-data-detail">
+								<h3>標註欄位</h3>
+								<ul class="nstc-method-tags">
+									<li>是否詐騙</li>
+									<li>語意類型</li>
+									<li>情緒操控</li>
+									<li>情緒類型</li>
+									<li>時間戳記</li>
+									<li>發送者</li>
+								</ul>
+								<h3>研究流程</h3>
+								<div class="nstc-steps-flow" aria-label="研究方法流程">
+									<span>資料預處理</span>
+									<span class="nstc-steps-arrow" aria-hidden="true">→</span>
+									<span>特徵提取</span>
+									<span class="nstc-steps-arrow" aria-hidden="true">→</span>
+									<span>模型訓練</span>
+									<span class="nstc-steps-arrow" aria-hidden="true">→</span>
+									<span>模型評估</span>
+								</div>
+								<p class="nstc-data-note">評估指標：Accuracy、Recall、F1-score、AUC、Specificity</p>
+							</div>
+						</div>
+
+						<div class="nstc-section-head">
+							<h2>六種模型實驗結果</h2>
+						</div>
+						<div class="nstc-table-wrap">
+							<table class="nstc-table">
+								<thead>
+									<tr>
+										<th>模型</th>
+										<th>準確率</th>
+										<th>召回率</th>
+										<th>F1</th>
+										<th>AUC</th>
+										<th>備註</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Baseline（TF-IDF + LR）</td>
+										<td>0.48</td>
+										<td>0.96</td>
+										<td>0.65</td>
+										<td>0.52</td>
+										<td>誤判嚴重</td>
+									</tr>
+									<tr class="nstc-table-best">
+										<td>Gemini 2.5 Pro</td>
+										<td>0.94</td>
+										<td>1.00</td>
+										<td>0.95</td>
+										<td>0.98</td>
+										<td>雲端最佳</td>
+									</tr>
+									<tr>
+										<td>Mistral Large</td>
+										<td>0.80</td>
+										<td>1.00</td>
+										<td>0.83</td>
+										<td>0.90</td>
+										<td>良好</td>
+									</tr>
+									<tr>
+										<td>Qwen2.5-1.5B</td>
+										<td>0.93</td>
+										<td>0.89</td>
+										<td>0.92</td>
+										<td>0.95</td>
+										<td>輕量快速</td>
+									</tr>
+									<tr>
+										<td>Qwen + LoRA</td>
+										<td>0.89</td>
+										<td>0.81</td>
+										<td>0.88</td>
+										<td>0.93</td>
+										<td>參數高效微調</td>
+									</tr>
+									<tr class="nstc-table-best">
+										<td>Emotion-LoRA</td>
+										<td>0.94</td>
+										<td>1.00</td>
+										<td>0.95</td>
+										<td>0.97</td>
+										<td>本地最佳</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="nstc-section-head">
+							<h2>語意與情緒分析</h2>
+						</div>
+						<div class="nstc-emotion-wrap">
+							<div class="nstc-emotion-cols">
+								<article class="nstc-emotion-card">
+									<h3>Keyword vs Implicit</h3>
+									<ul>
+										<li><strong>關鍵字型</strong>辨識率 95%</li>
+										<li><strong>隱性型</strong>辨識率 72%（傳統模型易漏判）</li>
+										<li>加入情緒條件後，情緒操控型提升至 <strong>88%</strong>（+16%）</li>
+										<li>Emotion-LoRA 語境理解達 <strong>94%</strong></li>
+									</ul>
+								</article>
+								<article class="nstc-emotion-card">
+									<h3>詐騙情緒類型分佈</h3>
+									<ul class="nstc-emotion-dist">
+										<li><span>Greed 貪婪</span><strong>35%</strong></li>
+										<li><span>Urgency 緊迫</span><strong>28%</strong></li>
+										<li><span>Fear 恐懼</span><strong>22%</strong></li>
+										<li><span>Trust 信任</span><strong>15%</strong></li>
+									</ul>
+									<p>在緊迫感與信任建立類話術中，情緒條件化模型表現尤佳。</p>
+								</article>
+							</div>
+						</div>
+
+						<div class="nstc-section-head">
+							<h2>成本與部署分析</h2>
+						</div>
+						<div class="nstc-table-wrap">
+							<table class="nstc-table nstc-table--deploy">
+								<thead>
+									<tr>
+										<th>模型</th>
+										<th>平均延遲</th>
+										<th>吞吐量</th>
+										<th>成本 / 千次</th>
+										<th>部署建議</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Gemini 2.5 Pro</td>
+										<td>10.79 s</td>
+										<td>0.09 req/s</td>
+										<td>$2.50</td>
+										<td>準確高、延遲長</td>
+									</tr>
+									<tr>
+										<td>Mistral Large</td>
+										<td>2.17 s</td>
+										<td>0.46 req/s</td>
+										<td>$1.80</td>
+										<td>中等</td>
+									</tr>
+									<tr>
+										<td>Qwen + LoRA</td>
+										<td>0.67 s</td>
+										<td>1.49 req/s</td>
+										<td>$0.05</td>
+										<td>快速</td>
+									</tr>
+									<tr class="nstc-table-best">
+										<td>Emotion-LoRA</td>
+										<td>0.24 s</td>
+										<td>4.17 req/s</td>
+										<td>$0.03</td>
+										<td>即時防詐首選</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p class="nstc-deploy-note">雲端模型準確率高但延遲長，不適合即時應用；Emotion-LoRA 以 Qwen2.5-1.5B 為基礎，成本較雲端降低約 90%，兼具準確率與推論速度。</p>
+
+						<div class="nstc-section-head">
+							<h2>結論與貢獻</h2>
+						</div>
+						<div class="nstc-conclusion-wrap">
+							<div class="nstc-conclusion-impact" aria-label="核心成果數據">
+								<div class="nstc-impact-item">
+									<span class="nstc-impact-val">+46%</span>
+									<span class="nstc-impact-label">準確率提升</span>
+								</div>
+								<div class="nstc-impact-item">
+									<span class="nstc-impact-val">100%</span>
+									<span class="nstc-impact-label">召回率</span>
+								</div>
+								<div class="nstc-impact-item">
+									<span class="nstc-impact-val">0.24s</span>
+									<span class="nstc-impact-label">本地推論</span>
+								</div>
+								<div class="nstc-impact-item">
+									<span class="nstc-impact-val">-90%</span>
+									<span class="nstc-impact-label">部署成本</span>
+								</div>
+							</div>
+
+							<p class="nstc-conclusion-lead">實驗證實 LLM 在詐騙偵測上全面優於傳統 ML，而 Emotion-LoRA 在維持高準確率的同時，具備即時部署的實務可行性。</p>
+
+							<h3 class="nstc-conclusion-sub">研究結論</h3>
+							<div class="nstc-conclusion-bento">
+								<article class="nstc-conclusion-card nstc-conclusion-card--hero">
+									<span class="nstc-conclusion-num">01</span>
+									<div class="nstc-conclusion-body">
+										<h4>LLM 優於傳統 ML</h4>
+										<p>準確率由 <strong>48%</strong> 提升至 <strong>94%</strong>，相對提升 46%。Baseline 幾乎將所有訊息誤判為詐騙，LLM 則能掌握語意脈絡。</p>
+									</div>
+								</article>
+								<article class="nstc-conclusion-card">
+									<span class="nstc-conclusion-num">02</span>
+									<div class="nstc-conclusion-body">
+										<h4>情緒條件化有效</h4>
+										<p>隱性詐騙辨識提升 <strong>16%</strong>，召回率達 <strong>100%</strong>。</p>
+									</div>
+								</article>
+								<article class="nstc-conclusion-card">
+									<span class="nstc-conclusion-num">03</span>
+									<div class="nstc-conclusion-body">
+										<h4>LoRA 降低部署成本</h4>
+										<p>小型本地端模型接近雲端大型模型效果，成本降低約 90%。</p>
+									</div>
+								</article>
+								<article class="nstc-conclusion-card nstc-conclusion-card--wide">
+									<span class="nstc-conclusion-num">04</span>
+									<div class="nstc-conclusion-body">
+										<h4>本地端具實務可行性</h4>
+										<p>Emotion-LoRA 推論僅 0.24 秒、每秒 4.17 次請求，適合即時防詐；參考架構為 <strong>Qwen2.5-1.5B + Emotion-LoRA</strong>。</p>
+									</div>
+								</article>
+							</div>
+
+							<h3 class="nstc-conclusion-sub">學術貢獻</h3>
+							<ol class="nstc-contrib-track">
+								<li>
+									<span class="nstc-contrib-icon"><span class="icon solid fa-brain"></span></span>
+									<div>
+										<strong>情緒條件化架構</strong>
+										<p>創新將情緒訊號融入詐騙偵測，強化隱性話術辨識。</p>
+									</div>
+								</li>
+								<li>
+									<span class="nstc-contrib-icon"><span class="icon solid fa-balance-scale"></span></span>
+									<div>
+										<strong>系統性模型比較</strong>
+										<p>全面對照雲端與本地端 LLM 的效能、延遲與成本。</p>
+									</div>
+								</li>
+								<li>
+									<span class="nstc-contrib-icon"><span class="icon solid fa-comments"></span></span>
+									<div>
+										<strong>語意與情緒分析</strong>
+										<p>揭示情緒維度對模型行為的關鍵影響。</p>
+									</div>
+								</li>
+								<li>
+									<span class="nstc-contrib-icon"><span class="icon solid fa-server"></span></span>
+									<div>
+										<strong>可部署參考設計</strong>
+										<p>提供可落地的本地端防詐方案與實作路徑。</p>
+									</div>
+								</li>
+							</ol>
+
+							<div class="nstc-recognition">
+								<article class="nstc-recognition-card">
+									<span class="nstc-recognition-type">研討會發表</span>
+									<h4>ICIM 2026</h4>
+									<p>大型語言模型應用在詐騙偵測之研究成果發表。</p>
+								</article>
+								<article class="nstc-recognition-card">
+									<span class="nstc-recognition-type">研討會發表</span>
+									<h4>IMP 2025</h4>
+									<p>研究主題於 IMP 2025 學術研討會發表。</p>
+								</article>
+								<article class="nstc-recognition-card nstc-recognition-card--award">
+									<figure class="nstc-recognition-figure">
+										<img src="../../images/大專生學術獎章.jpg" alt="管理學院學術獎章" />
+									</figure>
+									<div>
+										<span class="nstc-recognition-type">學術榮譽</span>
+										<h4>管理學院學術獎章</h4>
+										<p>因本研究計畫之學術成果獲頒管理學院學術獎章（2025）。</p>
+									</div>
+								</article>
+							</div>
 						</div>
 
 						<div class="nstc-section-head">
@@ -251,7 +441,7 @@
 							<div class="nstc-refs-body">
 								<p>Ali et al. (2022); Chakraborty et al. (2024); Han et al. (2024); Hu et al. (2021); Li et al. (2024); Papasavva et al. (2024); Sun, Bao &amp; Bu (2022); Yoon (2023)</p>
 								<p>王厚勛 (2020)；池晉煒 (2022)；李佩嬨、顧以謙 (2023)；陳恩齊 (2019)；陳怡文 (2021)；內政部警政署 (2024)</p>
-								<p class="nstc-refs-note">完整書目請見計劃書全文 PDF。</p>
+								<p class="nstc-refs-note">完整書目與實驗細節請見結案報告 PDF。</p>
 							</div>
 						</details>
 
